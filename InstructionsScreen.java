@@ -1,5 +1,7 @@
+
 // InstructionsScreen.java
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 
@@ -7,39 +9,56 @@ public class InstructionsScreen implements Screen {
     private JPanel panel;
 
     public InstructionsScreen(ActionListener onBack) {
-        panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-        panel.setBackground(Color.WHITE);
+        panel = new JPanel() {
+        Image bgImage = new ImageIcon("./assets/instructions.jpg").getImage();
 
-        JLabel title = new JLabel("Instructions", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", Font.BOLD, 28));
-        title.setBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0));
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(bgImage, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+        panel.setLayout(null); 
 
-        JTextArea text = new JTextArea(
-            "Welcome to Pop Quiz: Computer Science!\n\n"
-            + "• You have 5 lives.\n"
-            + "• Each grade increases the number of questions.\n"
-            + "• Answer correctly to progress!\n"
-            + "• Lose all lives, and it’s game over!\n\n"
-            + "Good luck and have fun!"
-        );
-        text.setFont(new Font("Arial", Font.PLAIN, 16));
-        text.setEditable(false);
-        text.setLineWrap(true);
-        text.setWrapStyleWord(true);
-        text.setBackground(Color.WHITE);
-        text.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
+        JButton backButton = new JButton("Back") {
+            private final int arc = 25;
 
-        JButton backBtn = new JButton("Back");
-        backBtn.setFont(new Font("Arial", Font.PLAIN, 18));
-        backBtn.addActionListener(onBack);
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        JPanel bottom = new JPanel();
-        bottom.add(backBtn);
+                if (getModel().isPressed()) {
+                    g2.setColor(new Color(220, 220, 220));
+                } else if (getModel().isRollover()) {
+                    g2.setColor(new Color(240, 240, 240));
+                } else {
+                    g2.setColor(Color.WHITE);
+                }
 
-        panel.add(title, BorderLayout.NORTH);
-        panel.add(new JScrollPane(text), BorderLayout.CENTER);
-        panel.add(bottom, BorderLayout.SOUTH);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), arc, arc);
+
+                g2.setColor(Color.BLACK);
+                g2.setStroke(new BasicStroke(2));
+                g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, arc, arc);
+
+                g2.dispose();
+                super.paintComponent(g);
+            }
+
+           
+        };
+
+        backButton.setBounds(50, 50, 180, 70);
+        backButton.setFont(new Font("Arial", Font.BOLD, 20));
+        backButton.setForeground(Color.BLACK);
+        backButton.setFocusPainted(false);
+        backButton.setContentAreaFilled(false);
+        backButton.setBorderPainted(false);
+        backButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        backButton.addActionListener(onBack);
+        panel.add(backButton);
     }
 
     @Override
