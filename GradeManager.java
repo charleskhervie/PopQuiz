@@ -6,8 +6,9 @@ public class GradeManager {
     private int grade = 1;
     private int lives = 5;
     private List<Question> currentQuestions = new ArrayList<>();
+    private Set<Question> usedQuestions = new HashSet<>(); // Track used questions
     private int currentIndex = 0;
-    private int correctAnswers = 0; // Track correct answers
+    private int correctAnswers = 0;
     private Random rand = new Random();
     private List<Question> theoreticalPool;
     private List<Question> programmingPool;
@@ -32,36 +33,50 @@ public class GradeManager {
     public void startGrade() {
         currentQuestions.clear();
         currentIndex = 0;
-        correctAnswers = 0; // Reset correct answers for new grade
+        correctAnswers = 0;
         
         int[] dist = DISTRIBUTION[grade - 1];
         int theoryCount = dist[0];
         int progCount = dist[1];
         
-        Collections.shuffle(theoreticalPool);
-        Collections.shuffle(programmingPool);
+        // Get unused theoretical questions
+        List<Question> availableTheoretical = new ArrayList<>();
+        for (Question q : theoreticalPool) {
+            if (!usedQuestions.contains(q)) {
+                availableTheoretical.add(q);
+            }
+        }
+        
+        // Get unused programming questions
+        List<Question> availableProgramming = new ArrayList<>();
+        for (Question q : programmingPool) {
+            if (!usedQuestions.contains(q)) {
+                availableProgramming.add(q);
+            }
+        }
+        
+        Collections.shuffle(availableTheoretical);
+        Collections.shuffle(availableProgramming);
         
         // Add theoretical questions
-        for (int i = 0; i < theoryCount && i < theoreticalPool.size(); i++) {
-            currentQuestions.add(theoreticalPool.get(i));
+        for (int i = 0; i < theoryCount && i < availableTheoretical.size(); i++) {
+            currentQuestions.add(availableTheoretical.get(i));
         }
         
         // Add programming questions
-        for (int i = 0; i < progCount && i < programmingPool.size(); i++) {
-            currentQuestions.add(programmingPool.get(i));
+        for (int i = 0; i < progCount && i < availableProgramming.size(); i++) {
+            currentQuestions.add(availableProgramming.get(i));
         }
         
         Collections.shuffle(currentQuestions);
+        
+        if (currentQuestions.isEmpty()) {
+            System.err.println("Warning: No unused questions available for grade " + grade);
+        }
     }
     
     public Question getCurrentQuestion() {
         if (currentIndex < currentQuestions.size()) {
-            return currentQuestions.get(currentIndex);
-        }
-        // If we run out of questions, reshuffle and continue
-        if (correctAnswers < TOTAL_PER_GRADE[grade - 1]) {
-            Collections.shuffle(currentQuestions);
-            currentIndex = 0;
             return currentQuestions.get(currentIndex);
         }
         return null;
@@ -69,10 +84,11 @@ public class GradeManager {
     
     public void nextQuestion() {
         currentIndex++;
-        // Wrap around if we've gone through all questions but haven't reached the required correct answers
-        if (currentIndex >= currentQuestions.size() && correctAnswers < TOTAL_PER_GRADE[grade - 1]) {
-            Collections.shuffle(currentQuestions);
-            currentIndex = 0;
+    }
+    
+    public void markQuestionAsUsed() {
+        if (currentIndex < currentQuestions.size()) {
+            usedQuestions.add(currentQuestions.get(currentIndex));
         }
     }
     
@@ -122,7 +138,7 @@ public class GradeManager {
     }
     
     public int getTotalQuestions() {
-        return TOTAL_PER_GRADE[grade - 1]; // Return required correct answers
+        return TOTAL_PER_GRADE[grade - 1];
     }
     
     public int getProgress() {
