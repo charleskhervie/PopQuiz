@@ -1,4 +1,5 @@
 
+
 import java.util.*;
 
 public class GradeManager {
@@ -6,6 +7,8 @@ public class GradeManager {
     private int lives = 5;
     private List<Question> currentQuestions = new ArrayList<>();
     private int currentIndex = 0;
+    private int correctAnswers = 0; // Track correct answers
+    private Random rand = new Random();
     private List<Question> theoreticalPool;
     private List<Question> programmingPool;
     
@@ -14,8 +17,10 @@ public class GradeManager {
         this.programmingPool = new ArrayList<>(programming);
     }
     
+    // Number of CORRECT answers required per grade
     private static final int[] TOTAL_PER_GRADE = {5, 10, 15, 20, 25};
     
+    // Theoretical/Programming distribution per grade
     private static final int[][] DISTRIBUTION = {
         {3, 2},  // G1: 3 theoretical, 2 programming = 5 total
         {5, 5},  // G2: 5 theoretical, 5 programming = 10 total
@@ -27,17 +32,11 @@ public class GradeManager {
     public void startGrade() {
         currentQuestions.clear();
         currentIndex = 0;
+        correctAnswers = 0; // Reset correct answers for new grade
         
-        // Use TOTAL_PER_GRADE to determine how many questions
-        int totalQuestionsNeeded = TOTAL_PER_GRADE[grade - 1];
         int[] dist = DISTRIBUTION[grade - 1];
         int theoryCount = dist[0];
         int progCount = dist[1];
-        
-        // Verify that distribution matches total
-        if (theoryCount + progCount != totalQuestionsNeeded) {
-            System.err.println("Warning: Distribution doesn't match TOTAL_PER_GRADE for grade " + grade);
-        }
         
         Collections.shuffle(theoreticalPool);
         Collections.shuffle(programmingPool);
@@ -52,13 +51,6 @@ public class GradeManager {
             currentQuestions.add(programmingPool.get(i));
         }
         
-        // Ensure we have exactly the right number of questions
-        if (currentQuestions.size() != totalQuestionsNeeded) {
-            System.err.println("Warning: Expected " + totalQuestionsNeeded + 
-                             " questions for grade " + grade + 
-                             ", but only have " + currentQuestions.size());
-        }
-        
         Collections.shuffle(currentQuestions);
     }
     
@@ -66,15 +58,39 @@ public class GradeManager {
         if (currentIndex < currentQuestions.size()) {
             return currentQuestions.get(currentIndex);
         }
+        // If we run out of questions, reshuffle and continue
+        if (correctAnswers < TOTAL_PER_GRADE[grade - 1]) {
+            Collections.shuffle(currentQuestions);
+            currentIndex = 0;
+            return currentQuestions.get(currentIndex);
+        }
         return null;
     }
     
     public void nextQuestion() {
         currentIndex++;
+        // Wrap around if we've gone through all questions but haven't reached the required correct answers
+        if (currentIndex >= currentQuestions.size() && correctAnswers < TOTAL_PER_GRADE[grade - 1]) {
+            Collections.shuffle(currentQuestions);
+            currentIndex = 0;
+        }
     }
     
     public boolean hasNext() {
-        return currentIndex < currentQuestions.size();
+        // Continue until we have enough correct answers
+        return correctAnswers < TOTAL_PER_GRADE[grade - 1];
+    }
+    
+    public void recordCorrectAnswer() {
+        correctAnswers++;
+    }
+    
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+    
+    public int getRequiredCorrect() {
+        return TOTAL_PER_GRADE[grade - 1];
     }
     
     public int getLives() {
@@ -106,10 +122,10 @@ public class GradeManager {
     }
     
     public int getTotalQuestions() {
-        return currentQuestions.size();
+        return TOTAL_PER_GRADE[grade - 1]; // Return required correct answers
     }
     
     public int getProgress() {
-        return (int) (((double) currentIndex / currentQuestions.size()) * 100);
+        return (int) (((double) correctAnswers / TOTAL_PER_GRADE[grade - 1]) * 100);
     }
 }

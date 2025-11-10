@@ -16,14 +16,14 @@ public class QuestionScreen implements Screen {
     private Runnable onStageComplete;
     private Runnable onGameOver;
     
-    private int totalQuestions;
+    private int requiredCorrect;
     private ImageIcon heartIcon;
 
     public QuestionScreen(GradeManager gradeManager, Runnable onStageComplete, Runnable onGameOver) {
         this.gradeManager = gradeManager;
         this.onStageComplete = onStageComplete;
         this.onGameOver = onGameOver;
-        this.totalQuestions = gradeManager.getTotalQuestions();
+        this.requiredCorrect = gradeManager.getRequiredCorrect();
 
         // Load heart icon
         try {
@@ -66,7 +66,7 @@ public class QuestionScreen implements Screen {
         questionLabel.setForeground(Color.WHITE); 
         centerPanel.add(questionLabel);
 
-        questionCounter = new JLabel("Question 1 of " + totalQuestions);
+        questionCounter = new JLabel("Correct: 0 / " + requiredCorrect);
         questionCounter.setFont(new Font("Arial", Font.PLAIN, 16));
         questionCounter.setAlignmentX(Component.CENTER_ALIGNMENT);
         questionCounter.setForeground(Color.WHITE);
@@ -127,9 +127,10 @@ public class QuestionScreen implements Screen {
         }
 
         Question q = gradeManager.getCurrentQuestion();
-        int currentQuestionNum = gradeManager.getCurrentIndex() + 1;
+        int correctAnswers = gradeManager.getCorrectAnswers();
 
-        questionCounter.setText("Question " + currentQuestionNum + " of " + totalQuestions);
+        questionCounter.setText("Correct: " + correctAnswers + " / " + requiredCorrect);
+
         questionLabel.setText("<html><div style='text-align:center;'>" + q.getQuestion() + "</div></html>");
 
         String[] choices = q.getChoices();
@@ -145,13 +146,15 @@ public class QuestionScreen implements Screen {
             }
         }
 
-        int progress = (currentQuestionNum * 100) / totalQuestions;
+        // Update progress bar based on correct answers
+        int progress = gradeManager.getProgress();
         progressBar.setValue(progress);
     }
 
     private void checkAnswer(int index) {
         Question q = gradeManager.getCurrentQuestion();
         int correct = q.getAnswer();
+        boolean isCorrect = (index == correct);
 
         for (int i = 0; i < choiceButtons.length; i++) {
             if (i == correct) {
@@ -167,7 +170,11 @@ public class QuestionScreen implements Screen {
             choiceButtons[i].setEnabled(false);
         }
 
-        if (index != correct) {
+        if (isCorrect) {
+            // Record the correct answer
+            gradeManager.recordCorrectAnswer();
+        } else {
+            // Lost a life
             gradeManager.loseLife();
             updateLivesDisplay();
 
