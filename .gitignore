@@ -1,0 +1,13 @@
+# Java
+*.class
+/bin/
+/out/
+/lib/*.jar
+
+# VS Code settings
+.vscode/
+.settings/
+
+# System files
+.DS_Store
+Thumbs.db

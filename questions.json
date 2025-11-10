@@ -1,0 +1,1456 @@
+{
+    "theoretical": [
+        {
+            "question": "What is a programming paradigm?",
+            "choices": [
+                "A software tool for debugging",
+                "A fundamental style or approach to programming",
+                "A type of compiler",
+                "A programming syntax rule"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which paradigm treats computation as the evaluation of mathematical functions?",
+            "choices": [
+                "Procedural",
+                "Functional",
+                "Object-Oriented",
+                "Logic"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "In object-oriented programming, a class represents:",
+            "choices": [
+                "An executable program",
+                "A data type template for creating objects",
+                "A variable holder",
+                "A conditional statement"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Procedural programming emphasizes:",
+            "choices": [
+                "Objects",
+                "Data flow",
+                "Functions and step-by-step instructions",
+                "Logical inferences"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Which of the following is a functional programming language?",
+            "choices": [
+                "Python",
+                "Java",
+                "Haskell",
+                "C"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Logic programming is primarily based on:",
+            "choices": [
+                "Loops and conditions",
+                "Inheritance",
+                "Facts and rules",
+                "Functions and recursion"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Which of the following best describes declarative programming?",
+            "choices": [
+                "It describes what the program should accomplish, not how",
+                "It focuses on mutable data",
+                "It executes commands step-by-step",
+                "It manipulates memory directly"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Event-driven programming relies on:",
+            "choices": [
+                "Mathematical expressions",
+                "External triggers like user actions or system events",
+                "Predefined recursion",
+                "Compiler optimizations"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which paradigm is dominant in C programming?",
+            "choices": [
+                "Object-Oriented",
+                "Functional",
+                "Procedural",
+                "Logic"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Java is primarily associated with which paradigm?",
+            "choices": [
+                "Procedural",
+                "Object-Oriented",
+                "Declarative",
+                "Functional"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "What is the main advantage of OOP?",
+            "choices": [
+                "It simplifies syntax",
+                "It supports data encapsulation and code reusability",
+                "It executes faster",
+                "It eliminates loops"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which of the following is an example of a declarative language?",
+            "choices": [
+                "C++",
+                "JavaScript",
+                "SQL",
+                "Java"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "In functional programming, functions are:",
+            "choices": [
+                "Independent of side effects",
+                "Dependent on global variables",
+                "Only used once",
+                "Always recursive"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which concept allows a class to inherit behavior from another class?",
+            "choices": [
+                "Polymorphism",
+                "Encapsulation",
+                "Inheritance",
+                "Abstraction"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "What does “polymorphism” mean in OOP?",
+            "choices": [
+                "Using multiple functions for one operation",
+                "The ability for one function or object to behave differently based on context",
+                "Hiding implementation details",
+                "Declaring multiple classes"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "In procedural programming, functions are used to:",
+            "choices": [
+                "Represent real-world entities",
+                "Divide the program into smaller reusable sections",
+                "Handle asynchronous events",
+                "Implement inheritance"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "The functional programming paradigm discourages:",
+            "choices": [
+                "The use of recursion",
+                "Mutable states and side effects",
+                "Higher-order functions",
+                "Composition"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which of these programming languages primarily uses logic programming?",
+            "choices": [
+                "Java",
+                "Prolog",
+                "C",
+                "Haskell"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "What is encapsulation?",
+            "choices": [
+                "Grouping related data and methods together",
+                "Writing code in separate files",
+                "Sharing all variables globally",
+                "Overloading methods"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which of these is NOT a programming paradigm?",
+            "choices": [
+                "Object-Oriented",
+                "Declarative",
+                "Functional",
+                "Structural"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Which paradigm most commonly uses “listeners”?",
+            "choices": [
+                "Event-driven programming",
+                "Logic programming",
+                "Functional programming",
+                "Procedural programming"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Abstraction in programming allows developers to:",
+            "choices": [
+                "Hide unnecessary details and expose essential features",
+                "Copy existing code",
+                "Simplify hardware access",
+                "Automatically optimize performance"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which paradigm avoids loops and uses recursion instead?",
+            "choices": [
+                "Functional",
+                "Object-Oriented",
+                "Event-Driven",
+                "Declarative"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "A pure function is defined as one that:",
+            "choices": [
+                "Has no parameters",
+                "Has side effects",
+                "Always returns the same result given the same inputs",
+                "Uses global variables"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "What makes declarative programming different from imperative programming?",
+            "choices": [
+                "Declarative focuses on “what,” while imperative focuses on “how”",
+                "Declarative requires a compiler",
+                "Declarative uses recursion",
+                "Imperative ignores state"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which feature supports multiple forms of a function in OOP?",
+            "choices": [
+                "Abstraction",
+                "Polymorphism",
+                "Inheritance",
+                "Aggregation"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "In event-driven programming, a GUI button click is an example of:",
+            "choices": [
+                "A variable",
+                "An event",
+                "A function call",
+                "An operator"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "The core idea behind procedural programming is:",
+            "choices": [
+                "Defining a sequence of instructions",
+                "Using logic inference",
+                "Building complex inheritance trees",
+                "Reacting to user events"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is a higher-order function?",
+            "choices": [
+                "A function that calls itself",
+                "A function that takes another function as an argument or returns one",
+                "A function that uses a loop",
+                "A function with multiple outputs"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which of these is a characteristic of declarative languages like SQL?",
+            "choices": [
+                "Control flow is explicitly defined",
+                "The system decides the execution plan",
+                "It uses loops to iterate through data",
+                "It handles hardware directly"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "What is composition in OOP?",
+            "choices": [
+                "Combining objects to form more complex ones",
+                "Inheriting attributes from a parent class",
+                "Defining static variables",
+                "Writing mathematical expressions"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Event handlers in GUI programs are used to:",
+            "choices": [
+                "Detect and respond to specific user actions",
+                "Generate random events",
+                "Compile the program",
+                "Handle logic operations"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which concept describes creating multiple forms of a single interface?",
+            "choices": [
+                "Abstraction",
+                "Polymorphism",
+                "Inheritance",
+                "Composition"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Functional programming languages often emphasize:",
+            "choices": [
+                "Recursion",
+                "Mutable variables",
+                "Stepwise instructions",
+                "Hardware access"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In OOP, constructors are used to:",
+            "choices": [
+                "Initialize object state",
+                "Delete data",
+                "Link to libraries",
+                "Return multiple values"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which of these paradigms focuses on relationships between entities?",
+            "choices": [
+                "Logic",
+                "Object-Oriented",
+                "Event-Driven",
+                "Procedural"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "The “pure” in pure functional programming means:",
+            "choices": [
+                "No I/O operations allowed",
+                "Functions have no side effects and are deterministic",
+                "Functions must be recursive",
+                "Code runs in parallel"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which of the following best represents the declarative paradigm?",
+            "choices": [
+                "SQL query",
+                "for loop",
+                "recursion",
+                "class definition"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "A “method” in OOP refers to:",
+            "choices": [
+                "A standalone program",
+                "A function inside a class",
+                "A variable type",
+                "A compiler instruction"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "The concept of code reuse in OOP is most achieved through:",
+            "choices": [
+                "Polymorphism",
+                "Inheritance",
+                "Encapsulation",
+                "Static classes"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which programming paradigm is most closely tied to GUIs?",
+            "choices": [
+                "Event-Driven",
+                "Functional",
+                "Logic",
+                "Procedural"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is a closure in functional programming?",
+            "choices": [
+                "A data type",
+                "A function with access to variables from its outer scope",
+                "A recursive call",
+                "A pointer reference"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "The paradigm that combines behavior (methods) with state (attributes) is:",
+            "choices": [
+                "Object-Oriented",
+                "Declarative",
+                "Functional",
+                "Logic"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What makes functional programming different from procedural?",
+            "choices": [
+                "It avoids state changes and uses functions as first-class citizens",
+                "It runs faster",
+                "It depends on loops",
+                "It uses pointers"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In event-driven systems, the flow of control is determined by:",
+            "choices": [
+                "User interactions and system events",
+                "Compiler optimizations",
+                "Static analysis",
+                "Predefined order"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which programming paradigm focuses on describing logic rather than control flow?",
+            "choices": [
+                "Logic",
+                "Procedural",
+                "Object-Oriented",
+                "Event-Driven"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which language below best represents the functional paradigm?",
+            "choices": [
+                "Haskell",
+                "C",
+                "Java",
+                "SQL"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is a side effect in programming?",
+            "choices": [
+                "A random output",
+                "A change in state outside a function’s scope",
+                "An error in recursion",
+                "A compiler warning"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Declarative programming languages are often:",
+            "choices": [
+                "More abstract and concise",
+                "Focused on low-level operations",
+                "Faster than C",
+                "Based on assembly"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In OOP, data hiding is achieved through:",
+            "choices": [
+                "Encapsulation",
+                "Inheritance",
+                "Abstraction",
+                "Polymorphism"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is the main focus of the procedural paradigm?",
+            "choices": [
+                "Steps and functions",
+                "Object hierarchies",
+                "Event handling",
+                "Predicate logic"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which concept allows a subclass to override a method from its superclass?",
+            "choices": [
+                "Polymorphism",
+                "Encapsulation",
+                "Composition",
+                "Aggregation"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which paradigm describes SQL queries and HTML markup best?",
+            "choices": [
+                "Declarative",
+                "Procedural",
+                "Object-Oriented",
+                "Functional"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is inheritance used for?",
+            "choices": [
+                "Sharing and extending functionality",
+                "Isolating variables",
+                "Building loops",
+                "Managing memory"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In functional programming, recursion replaces:",
+            "choices": [
+                "Inheritance",
+                "Loops",
+                "Classes",
+                "Data structures"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Which of the following is a benefit of declarative languages?",
+            "choices": [
+                "Improved readability and maintainability",
+                "Direct hardware access",
+                "Manual memory management",
+                "Faster I/O"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In logic programming, “facts” are used to:",
+            "choices": [
+                "Define known truths or statements",
+                "Execute functions",
+                "Store user input",
+                "Handle loops"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which is NOT part of object-oriented programming?",
+            "choices": [
+                "Encapsulation",
+                "Inheritance",
+                "Debugging",
+                "Polymorphism"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "In event-driven systems, the event loop:",
+            "choices": [
+                "Waits for and dispatches events",
+                "Handles recursion",
+                "Compiles the code",
+                "Executes once only"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What does declarative mean?",
+            "choices": [
+                "Tell the computer what to do, not how",
+                "Define all steps explicitly",
+                "Include loops and recursion",
+                "Depend on external files"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In OOP, “abstraction” means:",
+            "choices": [
+                "Showing only essential details to the user",
+                "Removing variables",
+                "Storing data in binary",
+                "Using recursion"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Functional programming heavily relies on:",
+            "choices": [
+                "Immutability",
+                "Object hierarchies",
+                "Data encapsulation",
+                "Event loops"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Event-driven programming is best for:",
+            "choices": [
+                "Games and GUIs",
+                "Database indexing",
+                "Algorithm design",
+                "Networking hardware"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "The declarative paradigm is most useful when:",
+            "choices": [
+                "The logic of computation is more important than the control flow",
+                "You need strict memory management",
+                "You must optimize performance",
+                "You want to handle low-level operations"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "A constructor in OOP runs:",
+            "choices": [
+                "When an object is created",
+                "At the end of execution",
+                "Only in inheritance",
+                "Only once per class"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which paradigm is most different from the functional paradigm?",
+            "choices": [
+                "Imperative",
+                "Declarative",
+                "Logic",
+                "Object-Oriented"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In logic programming, a query represents:",
+            "choices": [
+                "A question or goal to be proven using facts and rules",
+                "A function definition",
+                "A variable",
+                "An event"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "In OOP, “this” keyword refers to:",
+            "choices": [
+                "The current object instance",
+                "The parent class",
+                "The main function",
+                "The compiler"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Which paradigm focuses on relationships rather than step-by-step computation?",
+            "choices": [
+                "Logic",
+                "Procedural",
+                "Event-Driven",
+                "Imperative"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Functional programming languages prefer:",
+            "choices": [
+                "Immutable data and pure functions",
+                "Global variables and loops",
+                "Object inheritance",
+                "Shared states"
+            ],
+            "answer": 0
+        }
+    ],
+    "programming": [
+        {
+            "question": "(Python) What is printed? x = 2 print(x + 3)",
+            "choices": [
+                "2",
+                "3",
+                "5",
+                "Error"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(C) What is printed? /* C */ printf(\"%d\\n\", 1 + 2);",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "Error"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Java) What prints? for (int i = 0; i < 3; i++) System.out.print(i + \" \");",
+            "choices": [
+                "0 1 2",
+                "1 2 3",
+                "0 1 2 3",
+                "012"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Haskell) What is the value? map (+1) [0,1]",
+            "choices": [
+                "[0,1]",
+                "[1,2]",
+                "[2,3]",
+                "Error"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Prolog) Query result? likes(mary, pizza). ?- likes(mary, pizza).",
+            "choices": [
+                "true.",
+                "false.",
+                "likes(mary,pizza).",
+                "Error"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Python) Output? lst = [1,2,3] print([x*2 for x in lst])",
+            "choices": [
+                "[1,2,3]",
+                "[2,4,6]",
+                "(2,4,6)",
+                "246"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(C) What prints (assume ASCII)? char s[] = \"abc\" ; printf(\"%c\\n\", s[1]);",
+            "choices": [
+                "a",
+                "b",
+                "c",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) What is printed? String s = \"Hi\"; s += \"!\"; System.out.println(s);",
+            "choices": [
+                "Hi",
+                "Hi!",
+                "!Hi",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Haskell) What is the result? filter even [1..6]",
+            "choices": [
+                "[1,3,5]",
+                "[2,4,6]",
+                "[1..6]",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Prolog) Given: parent (alice,bob). parent (bob,carol). grandparent(X, Z) :- parent(X, Y), parent (Y, Z). ?- grandparent(alice, carol).",
+            "choices": [
+                "true.",
+                "false.",
+                "X = alice.",
+                "Error"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Python) Two-line output? def f (x): x += 1 return x a = 5 print(f(a)) print(a)",
+            "choices": [
+                "6\\n6",
+                "6\\n5",
+                "5\\n5",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(C) What does this print? int a[] = {1,2,3 }; printf(\"%d\\n\", sizeof(a)/sizeof(a[0]));",
+            "choices": [
+                "0",
+                "1",
+                "2",
+                "3"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "(Java) Output? System.out.println(2 + 3 * 4);",
+            "choices": [
+                "20",
+                "14",
+                "24",
+                "10"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Haskell) Evaluate: take 3 [1..]",
+            "choices": [
+                "[1]",
+                "[1,2,3]",
+                "[1,2,3,4]",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Prolog) Given: cat (tom). animal(X) :- cat (X). ?- animal(tom).",
+            "choices": [
+                "true.",
+                "false.",
+                "X = tom.",
+                "Error"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Python) What prints? a = [1,2 ] b = a b.append(3 ) print(a)",
+            "choices": [
+                "[1,2]",
+                "[1,2,3]",
+                "[3]",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(C) Integer division prints? printf(\"%d\\n\", 5/2);",
+            "choices": [
+                "2.5",
+                "2",
+                "3",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) What is printed? int[] a = {1,2,3 }; System.out.println(a[2]);",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "Error"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Haskell) Result? length [1,2,3,4]",
+            "choices": [
+                "0",
+                "1",
+                "4",
+                "Error"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Prolog) Given: parent (p,q). parent (q,r). ancestor(X,Y) :- parent (X,Y). ancestor(X,Y) :- parent(X,Z), ancestor (Z,Y). ?- ancestor(p,r).",
+            "choices": [
+                "true.",
+                "false.",
+                "X = p.",
+                "Error"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Python) What prints? def f (x=[]): x.append (1) return x print(f ()) print(f())",
+            "choices": [
+                "[1]\\n[1]",
+                "[1]\\n[1,1]",
+                "[1]\\n[1] with new list each call",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(C) what prints (pointer dereference)? int a = 1 ; int *p = &a; printf(\"%d\\n\", *p);",
+            "choices": [
+                "address",
+                "1",
+                "&a",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) What prints? String s = null ; System.out.println(s == null);",
+            "choices": [
+                "true",
+                "false",
+                "NullPointerException thrown",
+                "Error"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Haskell) Evaluate: map (^2) [0..4]",
+            "choices": [
+                "[0,1,4,9,16]",
+                "[0,1,2,3,4]",
+                "Error",
+                "[1,4,9,16]"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Prolog) If no matching fact, what does the query return? % no facts matching ?- foo(bar).",
+            "choices": [
+                "true.",
+                "false.",
+                "foo(bar).",
+                "Error"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Expected output: 23 Which snippet?",
+            "choices": [
+                "print(2 + 3)",
+                "print(\"2\" + \"3\")",
+                "print(2 * 3)",
+                "print(\"five\")"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Expected output: 3 Which snippet?",
+            "choices": [
+                "printf(\"%d\\n\", 1 + 1);",
+                "printf(\"%d\\n\", 1 + 2);",
+                "printf(\"%d\\n\", 3 + 3);",
+                "printf(\"%d\\n\", 0);"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Expected output: 0 1 2 Which snippet?",
+            "choices": [
+                "// Java for (int i = 0; i <= 2; i++) System.out.print(i + \" \");",
+                "// Java for (int i = 1; i <= 3; i++) System.out.print(i + \" \");",
+                "// Java int i = 0; while (i < 3) { System.out.print(i + \" \"); i++; }",
+                "// Java for (int i = 0; i < 3; i++) System.out.print(i + \" \");"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Expected output: [2,4,6] Which snippet?",
+            "choices": [
+                "# Python lst = [1,2,3] print([x*2 for x in lst])",
+                "# Python lst = [1,2,3] print([x+x for x in lst if x%2==0])",
+                "# Python lst = [1,2,3 ] print(list(map(str,lst)))",
+                "# Python lst = [1,2,3] print([x*3 for x in lst])"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: true. Which snippet?",
+            "choices": [
+                "% Prolog ?- member(2,[1,2,3]).",
+                "# Python print(2 in [1,2,3])",
+                "// Java System.out.println(Arrays.asList(1,2,3).contains(3));",
+                "/* C */ printf(\"false”);"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: b Which snippet?",
+            "choices": [
+                "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[1]);",
+                "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[0]);",
+                "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[2]);",
+                "/* C */ char s[] = \"abc\"; printf(\"%s\\n\", s[1]);"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: Hi! Which snippet?",
+            "choices": [
+                "// Java String s=\"Hi\"; s += \"!\"; System.out.println(s);",
+                "// Java String s=\"Hi\"; System.out.print(s);",
+                "// Java String s=\"Hi!\"; System.out.println(s.substring(1));",
+                "// Java String s=\"Hi\"; System.out.println(\"!\"+s);"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: 3 Which snippet?",
+            "choices": [
+                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", a[2]);",
+                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", a[3]);",
+                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", sizeof(a));",
+                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", *a);"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: [2,3] Which snippet?",
+            "choices": [
+                "-- Haskell map (+1) [1,2]",
+                "-- Haskell filter even [1..2]",
+                "-- Haskell [1,2,3]",
+                "-- Haskell [2,4]"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: true. Which snippet?",
+            "choices": [
+                "% Prolog likes(mary,pizza). ?- likes(mary,pizza).",
+                "# Python print(\"mary\" == \"mary\")",
+                "// Java System.out.println(true);",
+                "/* C */ printf(\"%d\\n\", 1);"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: 6 Which snippet?",
+            "choices": [
+                "# Python def f(x): return x * 2 print(f(3))",
+                "# Python print(3 + 3)",
+                "# Java System.out.println(2 + 4);",
+                "All of the above"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Expected output: [1,2,3] Which snippet?",
+            "choices": [
+                "-- Haskell take 3 [1..]",
+                "-- Haskell take 0 [1..3]",
+                "-- Haskell head [1,2,3]",
+                "-- Haskell [1,2,3,4]"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: 2 Which snippet?",
+            "choices": [
+                "/* C */ printf(\"%d\\n\", 5/2);",
+                "/* C */ printf(\"%d\\n\", 5.0/2.0);",
+                "// Java System.out.println(5/2.0);",
+                "// Java System.out.println(5/2);"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Expected output: [1,2,3,4] Which snippet?",
+            "choices": [
+                "# Python a=[1,2]; a.extend([3,4]); print(a)",
+                "# Python a=[1,2]; print(a+[3,4,5])",
+                "# Python a=[1,2]; a.append([3,4]); print(a)",
+                "# Python a=[1,2]; print([1,2,3,4])"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: true Which snippet?",
+            "choices": [
+                "// Java String s = null; System.out.println(s == null);",
+                "// Java String s = \"\"; System.out.println(s.equals(null));",
+                "// Java System.out.println(true);",
+                "// Java String s = \"a\"; System.out.println(s == \"a\");"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: [1,1,1] Which snippet?",
+            "choices": [
+                "# Python def f(x=[]): x.append(1 ); return x print(f()); print(f()); print(f())",
+                "# Python print([1,1,1])",
+                "# Python a=[1]; print(a*3)",
+                "# Python print([1]); print([1]); print([1])"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: 1 Which snippet?",
+            "choices": [
+                "/* C */ int a=1; int *p=&a; printf(\"%d\\n\", *p);",
+                "/* C */ int a=1; printf(\"%d\\n\", a);",
+                "// Java int a=1; System.out.println(a);",
+                "All A, B, and C print 1"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Expected output: [2,4,6] Which snippet?",
+            "choices": [
+                "-- Haskell map (*2) [1,2,3]",
+                "-- Haskell filter (>0) [1,2,3]",
+                "-- haskell map (+2) [0,2,4]",
+                "-- Haskell [2,4,6,8]"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: 33 Which snippet?",
+            "choices": [
+                "// Java int[] a={1,2,3}; System.out.println(a[2]);",
+                "// Java int[] a={1,2,3}; System.out.println(a.length);",
+                "/* C */ printf(\"%d\\n\", 3);",
+                "/* C */ printf(\"%d\\n\", 33);"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Expected output: true. Which snippet?",
+            "choices": [
+                "% Prolog parent(alice,bob). ?- parent(alice,bob).",
+                "# Python print(True)",
+                "// Java System.out.println(true);",
+                "/* C */ printf(\"%d\\n\", 1);"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: [0,1,1,2,3] Which snippet?",
+            "choices": [
+                "# Python def fib(n): a,b=0,1 out=[] for _ in range(n): out.append(a) a,b=b,a+b print(out)",
+                "-- Haskell take 5 (map fib [0..])",
+                "# Python print([0,1,1,2,3])",
+                "-- Haskell map (^2) [0..4]"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: [1,2,3] Which snippet?",
+            "choices": [
+                "-- Haskell take 3 [1..]",
+                "-- Haskell take 0 [1..3]",
+                "-- Haskell [1,2,3,4]",
+                "-- Haskell head [1,2,3]"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: 2 Which snippet?",
+            "choices": [
+                "/* C */ printf(\"%d\\n\", 5/2);",
+                "/* C */ printf(\"%d\\n\", 5.0/2.0);",
+                "// Java System.out.println(5/2.0);",
+                "// Java System.out.println(5/2);"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Expected output: true. Which snippet?",
+            "choices": [
+                "% Prolog cat(tom). animal(X):-cat(X). ?- animal(tom).",
+                "# Python print(True)",
+                "// Java System.out.println(true)",
+                "/* C */ printf(\"%d\\n\", 1)"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Expected output: Which snippet?",
+            "choices": [
+                "-- Haskell map (^2) [1,2,3]",
+                "# Python print([x*x for x in [1,2,3]])",
+                "Both A and B",
+                "Neither"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(C) Fill missing to swap ints via pointers: void swap(int *a,int *b) { /* MISSING */ }",
+            "choices": [
+                "int tmp; tmp = a; a = b; b = tmp;",
+                "int tmp; tmp = *a; *a = *b; *b = tmp;",
+                "*a = *b; *b = *a;",
+                "int tmp; tmp = &a; a = &b; b = &tmp;"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) Fill in the missing line class Car extends Vehicle { Car(String brand,int s,int d) { /* MISSING */ this.doors=d; } }",
+            "choices": [
+                "this.brand=brand; this.speed=s;",
+                "super(brand,s);",
+                "Vehicle(brand,s);",
+                "Car(brand,s);"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Python) Capture loop variable properly: funcs=[] for i in range(3 ): /* MISSING */ for f in funcs: print(f(2)) Expected: 0,2,4",
+            "choices": [
+                "funcs.append(lambda x: i * x)",
+                "funcs.append(lambda x, i=i: i * x)",
+                "funcs.append(lambda i: i * x)",
+                "funcs.append((lambda x: x * i)())"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Haskell) Factorial base case: factorial :: Integer -> Integer /* MISSING */ factorial n = n * factorial (n-1)",
+            "choices": [
+                "factorial 0 = 1",
+                "factorial 1 = 0",
+                "factorial n = 1",
+                "factorial = id"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Prolog) Sibling rule (not same person): parent(john,mary). parent(john,luke). /* MISSING */",
+            "choices": [
+                "sibling(X,Y):-parent(Z,X),parent(Z,Y).",
+                "sibling(X,Y):-parent(Z,X),parent(Z,Y), X \\= Y.",
+                "sibling(X,X):-parent(Z,X),parent(Z,X).",
+                "sibling(X,Y):-parent(X,Z),parent(Y,Z)."
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(C) Allocate array of n ints: int *arr; int n=10 ; /* MISSING */",
+            "choices": [
+                "arr=malloc(sizeof(arr)*n);",
+                "arr=(int*)malloc(n*sizeof(int));",
+                "arr=malloc(n);",
+                "int arr[n];"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) Override equals safely: public boolean equals(Object o) { /* MISSING */ }",
+            "choices": [
+                "return this==o;",
+                "Item other=(Item)o; return other.id==id;",
+                "if(!(o instanceof Item)) return false; Item other=(Item)o; return other.id==id;",
+                "return false;"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Python) Flatten list of lists: lists=[[1,2],[3,4 ]] flat=[ /* MISSING */ ]",
+            "choices": [
+                "for lst in lists: for x in lst: x",
+                "x for lst in lists for x in lst",
+                "[x for lst in lists for x in lst]",
+                "[lst for x in lists]"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Haskell) applyTwice def: applyTwice :: (a->a)->a->a /* MISSING */",
+            "choices": [
+                "applyTwice f x = f (f x)",
+                "applyTwice f x = (f . f) x",
+                "applyTwice = \\f x -> f (f x)",
+                "All of the above"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "(Prolog) Prevent backtracking (cut): once_say(X) :- say(X), /* MISSING */",
+            "choices": [
+                "!.",
+                "fail.",
+                "true.",
+                "repeat."
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(C) Reverse string: loop condition for(i=0,j=strlen(s)-1; /* MISSING */; i++,j--) { ... }",
+            "choices": [
+                "i < j",
+                "i <= j",
+                "i < strlen(s)",
+                "j >= 0"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Java) Thread-safe increment: class Counter { private int c=0; /* MISSING */ }",
+            "choices": [
+                "public void increment(){c++;}",
+                "public synchronized void increment(){c++;}",
+                "public void increment() throws Exception {c++;}",
+                "private void increment(){c++;}"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Python) Modify outer variable inside nested function: def outer(): count=0 def inner(): /* MISSING */ count += 1 return count return inner()",
+            "choices": [
+                "global count",
+                "local count",
+                "nonlocal count",
+                "outer.count"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "(Haskell) Strict fold import: -- MISSING sumList = foldl' (+) 0",
+            "choices": [
+                "import Data.List (foldl')",
+                "import Prelude (foldl')",
+                "import Data.Maybe (foldl')",
+                "No import needed"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Prolog) Base case for list_len: list_len([_|T],N):-list_len(T,N1),N is N1+1 . /* MISSING */",
+            "choices": [
+                "list_len([],0).",
+                "list_len([],[]).",
+                "list_len([X],1).",
+                "list_len(X,0):-X = []."
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(C) fopen check and close: FILE *f=fopen(\"d\",\"r\" ); if(/* MISSING */) { /* read */ /* MISSING */ }",
+            "choices": [
+                "f==NULL / fclose(f);",
+                "f!=NULL / fclose(f);",
+                "f==0 / close(f);",
+                "fopen!=NULL / fclose(f);"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) Implement Shape.area(): interface Shape{ double area(); } class Circle /* MISSING */ { double r; Circle(double r){ this.r=r; } /* MISSING */ }",
+            "choices": [
+                "implements Shape / public double area(){return Math.PI*r*r;}",
+                "extends Shape / public double area(){...}",
+                "implements Shape / public int area(){...}",
+                "implements Shape / void area(){...}"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Python) Generator fib yield: def fib(n): a,b=0,1 for _ in range(n): /* MISSING */ a,b=b,a+b",
+            "choices": [
+                "print(a)",
+                "yield a",
+                "return a",
+                "yield b"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Haskell) List comprehension positives guard: positives xs = [ x | x <- xs, /* MISSING */ ]",
+            "choices": [
+                "x > 0",
+                "x >= 0",
+                "even x",
+                "x < 0"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Prolog) Negation-as-failure: not_parent(X,Y) :- /* MISSING */ parent(X,Y).",
+            "choices": [
+                "not parent(X,Y).",
+                "\\+ parent(X,Y).",
+                "! parent(X,Y).",
+                "fail parent(X,Y)."
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(C) Safe dynamic allocation: int *arr; int n=10; /* MISSING */",
+            "choices": [
+                "arr=malloc(sizeof(arr)*n);",
+                "arr=(int*)malloc(n*sizeof(int));",
+                "arr=malloc(n);",
+                "int arr[n];"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Java) Correct equals override (defensive): public boolean equals(Object o) { /* MISSING */ }",
+            "choices": [
+                "return this==o;",
+                "if(!(o instanceof Item)) return false; Item other=(Item)o; return other.id==id;",
+                "Item other=(Item)o; return other.id==id;",
+                "return false;"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "(Python) Make function pure (no default mutable arg). Replace default `x=[]` with: def f(x=[]): x.append(1 ); return x # MISSING",
+            "choices": [
+                "def f(x=None): if x is None: x=[]; x.append(1); return x",
+                "def f(x=[]): x.append(1); return x",
+                "def f(): x=[]; x.append(1); return x",
+                "def f(x): x.append(1); return x"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Haskell) Implement map via foldr (fill skeleton): mymap f xs = /* MISSING */",
+            "choices": [
+                "foldr (\\x acc -> f x : acc) [] xs",
+                "foldl (\\acc x -> acc ++ [f x]) [] xs",
+                "map f xs",
+                "foldr (:) [] xs"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "(Prolog) Use cut to get first solution only: foo(X) :- bar(X). bar(a). bar(b). once_foo(X) :- /* MISSING */",
+            "choices": [
+                "bar(X), !.",
+                "bar(X), fail.",
+                "once(bar(X)).",
+                "bar(X)."
+            ],
+            "answer": 0
+        }
+    ]
+}
