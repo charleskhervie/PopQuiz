@@ -8,6 +8,10 @@ public class GameVictoryScreen implements Screen {
     private JPanel panel;
 
     public GameVictoryScreen(ActionListener onReturnToTitle) {
+        // Stop any previous audio and play victory music
+        AudioPlayer.stopAll();
+        AudioPlayer.playSound("./audio/GameVictory.wav", true);
+        
         Image bgImage = new ImageIcon("./assets/victory-screen.jpg").getImage();
 
         panel = new JPanel(null) {
@@ -22,7 +26,10 @@ public class GameVictoryScreen implements Screen {
         panel.setOpaque(true);
 
         RoundedButton backBtn = new RoundedButton("Return to Title", 40);
-        backBtn.addActionListener(onReturnToTitle);
+        backBtn.addActionListener(e -> {
+            AudioPlayer.playSound("./audio/Click.wav", false);
+            onReturnToTitle.actionPerformed(e);
+        });
 
         backBtn.setFont(new Font("Impact", Font.BOLD, 22));
 

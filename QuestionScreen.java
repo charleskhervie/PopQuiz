@@ -25,6 +25,10 @@ public class QuestionScreen implements Screen {
         this.onGameOver = onGameOver;
         this.requiredCorrect = gradeManager.getRequiredCorrect();
 
+        // Stop any previous audio and play question screen music
+        AudioPlayer.stopAll();
+        AudioPlayer.playSound("./audio/QuestionScreen.wav", true);
+
         // Load heart icon
         try {
             ImageIcon originalIcon = new ImageIcon("./assets/lives.png");
@@ -89,7 +93,10 @@ public class QuestionScreen implements Screen {
             btn.setContentAreaFilled(true);
 
             int index = i;
-            btn.addActionListener(e -> checkAnswer(index));
+            btn.addActionListener(e -> {
+                AudioPlayer.playSound("./audio/Click.wav", false);
+                checkAnswer(index);
+            });
 
             int keyCode = KeyEvent.VK_1 + i;
             btn.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)

@@ -10,6 +10,10 @@ public class TitleScreen implements Screen {
 
     public TitleScreen(ActionListener onStart, ActionListener onInstructions, ActionListener onExit) {
         
+        // Stop any previous audio and play title screen music
+        AudioPlayer.stopAll();
+        AudioPlayer.playSound("./audio/TitleScreen.wav", true);
+        
         ImageIcon background = new ImageIcon("./assets/title-page.jpg");
         Image backgroundImage = background.getImage();
 
@@ -28,9 +32,18 @@ public class TitleScreen implements Screen {
         StyledPillButton instructionsBtn = new StyledPillButton("INSTRUCTIONS");
         StyledPillButton exitBtn = new StyledPillButton("EXIT");
 
-        startBtn.addActionListener(onStart);
-        instructionsBtn.addActionListener(onInstructions);
-        exitBtn.addActionListener(onExit);
+        startBtn.addActionListener(e -> {
+            AudioPlayer.playSound("./audio/Click.wav", false);
+            onStart.actionPerformed(e);
+        });
+        instructionsBtn.addActionListener(e -> {
+            AudioPlayer.playSound("./audio/Click.wav", false);
+            onInstructions.actionPerformed(e);
+        });
+        exitBtn.addActionListener(e -> {
+            AudioPlayer.playSound("./audio/Click.wav", false);
+            onExit.actionPerformed(e);
+        });
 
         
         int buttonWidth = 350;

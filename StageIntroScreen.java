@@ -8,6 +8,10 @@ public class StageIntroScreen implements Screen {
     private JPanel panel;
 
     public StageIntroScreen(int grade, ActionListener onStartGrade) {
+        // Stop any previous audio and play stage intro music
+        AudioPlayer.stopAll();
+        AudioPlayer.playSound("./audio/StageIntro.wav", true);
+        
         String imagePath = "./assets/grade-" + grade + ".jpg";
         Image bgImage = new ImageIcon(imagePath).getImage();
 
@@ -26,7 +30,10 @@ public class StageIntroScreen implements Screen {
         RoundedButton startBtn = new RoundedButton("START GRADE " + grade, 36);
         startBtn.setBackground(new Color(255, 250, 240)); 
         startBtn.setForeground(new Color(0, 0, 139)); 
-        startBtn.addActionListener(onStartGrade);
+        startBtn.addActionListener(e -> {
+            AudioPlayer.playSound("./audio/Click.wav", false);
+            onStartGrade.actionPerformed(e);
+        });
         startBtn.setBounds(650, 530, 220, 60);
         panel.add(startBtn);
 
