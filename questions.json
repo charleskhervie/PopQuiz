@@ -702,755 +702,700 @@
         }
     ],
     "programming": [
-        {
+       {
+            "type": "output",
             "question": "(Python) What is printed? x = 2 print(x + 3)",
-            "choices": [
-                "2",
-                "3",
-                "5",
-                "Error"
-            ],
+            "choices": ["2", "3", "5", "Error"],
             "answer": 2
         },
         {
+            "type": "output",
             "question": "(C) What is printed? /* C */ printf(\"%d\\n\", 1 + 2);",
-            "choices": [
-                "1",
-                "2",
-                "3",
-                "Error"
-            ],
+            "choices": ["1", "2", "3", "Error"],
             "answer": 2
         },
         {
+            "type": "output",
             "question": "(Java) What prints? for (int i = 0; i < 3; i++) System.out.print(i + \" \");",
-            "choices": [
-                "0 1 2",
-                "1 2 3",
-                "0 1 2 3",
-                "012"
-            ],
+            "choices": ["0 1 2", "1 2 3", "0 1 2 3", "012"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Haskell) What is the value? map (+1) [0,1]",
-            "choices": [
-                "[0,1]",
-                "[1,2]",
-                "[2,3]",
-                "Error"
-            ],
+            "choices": ["[0,1]", "[1,2]", "[2,3]", "Error"],
             "answer": 2
         },
         {
+            "type": "output",
             "question": "(Prolog) Query result? likes(mary, pizza). ?- likes(mary, pizza).",
-            "choices": [
-                "true.",
-                "false.",
-                "likes(mary,pizza).",
-                "Error"
-            ],
+            "choices": ["true.", "false.", "likes(mary,pizza).", "Error"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Python) Output? lst = [1,2,3] print([x*2 for x in lst])",
-            "choices": [
-                "[1,2,3]",
-                "[2,4,6]",
-                "(2,4,6)",
-                "246"
-            ],
+            "choices": ["[1,2,3]", "[2,4,6]", "(2,4,6)", "246"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(C) What prints (assume ASCII)? char s[] = \"abc\" ; printf(\"%c\\n\", s[1]);",
-            "choices": [
-                "a",
-                "b",
-                "c",
-                "Error"
-            ],
+            "choices": ["a", "b", "c", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Java) What is printed? String s = \"Hi\"; s += \"!\"; System.out.println(s);",
-            "choices": [
-                "Hi",
-                "Hi!",
-                "!Hi",
-                "Error"
-            ],
+            "choices": ["Hi", "Hi!", "!Hi", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Haskell) What is the result? filter even [1..6]",
-            "choices": [
-                "[1,3,5]",
-                "[2,4,6]",
-                "[1..6]",
-                "Error"
-            ],
+            "choices": ["[1,3,5]", "[2,4,6]", "[1..6]", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Prolog) Given: parent (alice,bob). parent (bob,carol). grandparent(X, Z) :- parent(X, Y), parent (Y, Z). ?- grandparent(alice, carol).",
-            "choices": [
-                "true.",
-                "false.",
-                "X = alice.",
-                "Error"
-            ],
+            "choices": ["true.", "false.", "X = alice.", "Error"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Python) Two-line output? def f (x): x += 1 return x a = 5 print(f(a)) print(a)",
-            "choices": [
-                "6\\n6",
-                "6\\n5",
-                "5\\n5",
-                "Error"
-            ],
+            "choices": ["6\\n6", "6\\n5", "5\\n5", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(C) What does this print? int a[] = {1,2,3 }; printf(\"%d\\n\", sizeof(a)/sizeof(a[0]));",
-            "choices": [
-                "0",
-                "1",
-                "2",
-                "3"
-            ],
+            "choices": ["0", "1", "2", "3"],
             "answer": 3
         },
         {
+            "type": "output",
             "question": "(Java) Output? System.out.println(2 + 3 * 4);",
-            "choices": [
-                "20",
-                "14",
-                "24",
-                "10"
-            ],
+            "choices": ["20", "14", "24", "10"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Haskell) Evaluate: take 3 [1..]",
-            "choices": [
-                "[1]",
-                "[1,2,3]",
-                "[1,2,3,4]",
-                "Error"
-            ],
+            "choices": ["[1]", "[1,2,3]", "[1,2,3,4]", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Prolog) Given: cat (tom). animal(X) :- cat (X). ?- animal(tom).",
-            "choices": [
-                "true.",
-                "false.",
-                "X = tom.",
-                "Error"
-            ],
+            "choices": ["true.", "false.", "X = tom.", "Error"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Python) What prints? a = [1,2 ] b = a b.append(3 ) print(a)",
-            "choices": [
-                "[1,2]",
-                "[1,2,3]",
-                "[3]",
-                "Error"
-            ],
+            "choices": ["[1,2]", "[1,2,3]", "[3]", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(C) Integer division prints? printf(\"%d\\n\", 5/2);",
-            "choices": [
-                "2.5",
-                "2",
-                "3",
-                "Error"
-            ],
+            "choices": ["2.5", "2", "3", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Java) What is printed? int[] a = {1,2,3 }; System.out.println(a[2]);",
-            "choices": [
-                "1",
-                "2",
-                "3",
-                "Error"
-            ],
+            "choices": ["1", "2", "3", "Error"],
             "answer": 2
         },
         {
+            "type": "output",
             "question": "(Haskell) Result? length [1,2,3,4]",
-            "choices": [
-                "0",
-                "1",
-                "4",
-                "Error"
-            ],
+            "choices": ["0", "1", "4", "Error"],
             "answer": 2
         },
         {
+            "type": "output",
             "question": "(Prolog) Given: parent (p,q). parent (q,r). ancestor(X,Y) :- parent (X,Y). ancestor(X,Y) :- parent(X,Z), ancestor (Z,Y). ?- ancestor(p,r).",
-            "choices": [
-                "true.",
-                "false.",
-                "X = p.",
-                "Error"
-            ],
+            "choices": ["true.", "false.", "X = p.", "Error"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Python) What prints? def f (x=[]): x.append (1) return x print(f ()) print(f())",
-            "choices": [
-                "[1]\\n[1]",
-                "[1]\\n[1,1]",
-                "[1]\\n[1] with new list each call",
-                "Error"
-            ],
+            "choices": ["[1]\\n[1]", "[1]\\n[1,1]", "[1]\\n[1] with new list each call", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(C) what prints (pointer dereference)? int a = 1 ; int *p = &a; printf(\"%d\\n\", *p);",
-            "choices": [
-                "address",
-                "1",
-                "&a",
-                "Error"
-            ],
+            "choices": ["address", "1", "&a", "Error"],
             "answer": 1
         },
         {
+            "type": "output",
             "question": "(Java) What prints? String s = null ; System.out.println(s == null);",
-            "choices": [
-                "true",
-                "false",
-                "NullPointerException thrown",
-                "Error"
-            ],
+            "choices": ["true", "false", "NullPointerException thrown", "Error"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Haskell) Evaluate: map (^2) [0..4]",
-            "choices": [
-                "[0,1,4,9,16]",
-                "[0,1,2,3,4]",
-                "Error",
-                "[1,4,9,16]"
-            ],
+            "choices": ["[0,1,4,9,16]", "[0,1,2,3,4]", "Error", "[1,4,9,16]"],
             "answer": 0
         },
         {
+            "type": "output",
             "question": "(Prolog) If no matching fact, what does the query return? % no facts matching ?- foo(bar).",
-            "choices": [
-                "true.",
-                "false.",
-                "foo(bar).",
-                "Error"
-            ],
+            "choices": ["true.", "false.", "foo(bar).", "Error"],
             "answer": 1
         },
-        {
-            "question": "Expected output: 23 Which snippet?",
-            "choices": [
-                "print(2 + 3)",
-                "print(\"2\" + \"3\")",
-                "print(2 * 3)",
-                "print(\"five\")"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "Expected output: 3 Which snippet?",
-            "choices": [
-                "printf(\"%d\\n\", 1 + 1);",
-                "printf(\"%d\\n\", 1 + 2);",
-                "printf(\"%d\\n\", 3 + 3);",
-                "printf(\"%d\\n\", 0);"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "Expected output: 0 1 2 Which snippet?",
-            "choices": [
-                "// Java for (int i = 0; i <= 2; i++) System.out.print(i + \" \");",
-                "// Java for (int i = 1; i <= 3; i++) System.out.print(i + \" \");",
-                "// Java int i = 0; while (i < 3) { System.out.print(i + \" \"); i++; }",
-                "// Java for (int i = 0; i < 3; i++) System.out.print(i + \" \");"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "Expected output: [2,4,6] Which snippet?",
-            "choices": [
-                "# Python lst = [1,2,3] print([x*2 for x in lst])",
-                "# Python lst = [1,2,3] print([x+x for x in lst if x%2==0])",
-                "# Python lst = [1,2,3 ] print(list(map(str,lst)))",
-                "# Python lst = [1,2,3] print([x*3 for x in lst])"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: true. Which snippet?",
-            "choices": [
-                "% Prolog ?- member(2,[1,2,3]).",
-                "# Python print(2 in [1,2,3])",
-                "// Java System.out.println(Arrays.asList(1,2,3).contains(3));",
-                "/* C */ printf(\"false”);"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: b Which snippet?",
-            "choices": [
-                "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[1]);",
-                "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[0]);",
-                "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[2]);",
-                "/* C */ char s[] = \"abc\"; printf(\"%s\\n\", s[1]);"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: Hi! Which snippet?",
-            "choices": [
-                "// Java String s=\"Hi\"; s += \"!\"; System.out.println(s);",
-                "// Java String s=\"Hi\"; System.out.print(s);",
-                "// Java String s=\"Hi!\"; System.out.println(s.substring(1));",
-                "// Java String s=\"Hi\"; System.out.println(\"!\"+s);"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: 3 Which snippet?",
-            "choices": [
-                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", a[2]);",
-                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", a[3]);",
-                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", sizeof(a));",
-                "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", *a);"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: [2,3] Which snippet?",
-            "choices": [
-                "-- Haskell map (+1) [1,2]",
-                "-- Haskell filter even [1..2]",
-                "-- Haskell [1,2,3]",
-                "-- Haskell [2,4]"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: true. Which snippet?",
-            "choices": [
-                "% Prolog likes(mary,pizza). ?- likes(mary,pizza).",
-                "# Python print(\"mary\" == \"mary\")",
-                "// Java System.out.println(true);",
-                "/* C */ printf(\"%d\\n\", 1);"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: 6 Which snippet?",
-            "choices": [
-                "# Python def f(x): return x * 2 print(f(3))",
-                "# Python print(3 + 3)",
-                "# Java System.out.println(2 + 4);",
-                "All of the above"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "Expected output: [1,2,3] Which snippet?",
-            "choices": [
-                "-- Haskell take 3 [1..]",
-                "-- Haskell take 0 [1..3]",
-                "-- Haskell head [1,2,3]",
-                "-- Haskell [1,2,3,4]"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: 2 Which snippet?",
-            "choices": [
-                "/* C */ printf(\"%d\\n\", 5/2);",
-                "/* C */ printf(\"%d\\n\", 5.0/2.0);",
-                "// Java System.out.println(5/2.0);",
-                "// Java System.out.println(5/2);"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "Expected output: [1,2,3,4] Which snippet?",
-            "choices": [
-                "# Python a=[1,2]; a.extend([3,4]); print(a)",
-                "# Python a=[1,2]; print(a+[3,4,5])",
-                "# Python a=[1,2]; a.append([3,4]); print(a)",
-                "# Python a=[1,2]; print([1,2,3,4])"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: true Which snippet?",
-            "choices": [
-                "// Java String s = null; System.out.println(s == null);",
-                "// Java String s = \"\"; System.out.println(s.equals(null));",
-                "// Java System.out.println(true);",
-                "// Java String s = \"a\"; System.out.println(s == \"a\");"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: [1,1,1] Which snippet?",
-            "choices": [
-                "# Python def f(x=[]): x.append(1 ); return x print(f()); print(f()); print(f())",
-                "# Python print([1,1,1])",
-                "# Python a=[1]; print(a*3)",
-                "# Python print([1]); print([1]); print([1])"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: 1 Which snippet?",
-            "choices": [
-                "/* C */ int a=1; int *p=&a; printf(\"%d\\n\", *p);",
-                "/* C */ int a=1; printf(\"%d\\n\", a);",
-                "// Java int a=1; System.out.println(a);",
-                "All A, B, and C print 1"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "Expected output: [2,4,6] Which snippet?",
-            "choices": [
-                "-- Haskell map (*2) [1,2,3]",
-                "-- Haskell filter (>0) [1,2,3]",
-                "-- haskell map (+2) [0,2,4]",
-                "-- Haskell [2,4,6,8]"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: 33 Which snippet?",
-            "choices": [
-                "// Java int[] a={1,2,3}; System.out.println(a[2]);",
-                "// Java int[] a={1,2,3}; System.out.println(a.length);",
-                "/* C */ printf(\"%d\\n\", 3);",
-                "/* C */ printf(\"%d\\n\", 33);"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "Expected output: true. Which snippet?",
-            "choices": [
-                "% Prolog parent(alice,bob). ?- parent(alice,bob).",
-                "# Python print(True)",
-                "// Java System.out.println(true);",
-                "/* C */ printf(\"%d\\n\", 1);"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: [0,1,1,2,3] Which snippet?",
-            "choices": [
-                "# Python def fib(n): a,b=0,1 out=[] for _ in range(n): out.append(a) a,b=b,a+b print(out)",
-                "-- Haskell take 5 (map fib [0..])",
-                "# Python print([0,1,1,2,3])",
-                "-- Haskell map (^2) [0..4]"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: [1,2,3] Which snippet?",
-            "choices": [
-                "-- Haskell take 3 [1..]",
-                "-- Haskell take 0 [1..3]",
-                "-- Haskell [1,2,3,4]",
-                "-- Haskell head [1,2,3]"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: 2 Which snippet?",
-            "choices": [
-                "/* C */ printf(\"%d\\n\", 5/2);",
-                "/* C */ printf(\"%d\\n\", 5.0/2.0);",
-                "// Java System.out.println(5/2.0);",
-                "// Java System.out.println(5/2);"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "Expected output: true. Which snippet?",
-            "choices": [
-                "% Prolog cat(tom). animal(X):-cat(X). ?- animal(tom).",
-                "# Python print(True)",
-                "// Java System.out.println(true)",
-                "/* C */ printf(\"%d\\n\", 1)"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "Expected output: Which snippet?",
-            "choices": [
-                "-- Haskell map (^2) [1,2,3]",
-                "# Python print([x*x for x in [1,2,3]])",
-                "Both A and B",
-                "Neither"
-            ],
-            "answer": 2
-        },
-        {
-            "question": "(C) Fill missing to swap ints via pointers: void swap(int *a,int *b) { /* MISSING */ }",
-            "choices": [
-                "int tmp; tmp = a; a = b; b = tmp;",
-                "int tmp; tmp = *a; *a = *b; *b = tmp;",
-                "*a = *b; *b = *a;",
-                "int tmp; tmp = &a; a = &b; b = &tmp;"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Java) Fill in the missing line class Car extends Vehicle { Car(String brand,int s,int d) { /* MISSING */ this.doors=d; } }",
-            "choices": [
-                "this.brand=brand; this.speed=s;",
-                "super(brand,s);",
-                "Vehicle(brand,s);",
-                "Car(brand,s);"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Python) Capture loop variable properly: funcs=[] for i in range(3 ): /* MISSING */ for f in funcs: print(f(2)) Expected: 0,2,4",
-            "choices": [
-                "funcs.append(lambda x: i * x)",
-                "funcs.append(lambda x, i=i: i * x)",
-                "funcs.append(lambda i: i * x)",
-                "funcs.append((lambda x: x * i)())"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Haskell) Factorial base case: factorial :: Integer -> Integer /* MISSING */ factorial n = n * factorial (n-1)",
-            "choices": [
-                "factorial 0 = 1",
-                "factorial 1 = 0",
-                "factorial n = 1",
-                "factorial = id"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Prolog) Sibling rule (not same person): parent(john,mary). parent(john,luke). /* MISSING */",
-            "choices": [
-                "sibling(X,Y):-parent(Z,X),parent(Z,Y).",
-                "sibling(X,Y):-parent(Z,X),parent(Z,Y), X \\= Y.",
-                "sibling(X,X):-parent(Z,X),parent(Z,X).",
-                "sibling(X,Y):-parent(X,Z),parent(Y,Z)."
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(C) Allocate array of n ints: int *arr; int n=10 ; /* MISSING */",
-            "choices": [
-                "arr=malloc(sizeof(arr)*n);",
-                "arr=(int*)malloc(n*sizeof(int));",
-                "arr=malloc(n);",
-                "int arr[n];"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Java) Override equals safely: public boolean equals(Object o) { /* MISSING */ }",
-            "choices": [
-                "return this==o;",
-                "Item other=(Item)o; return other.id==id;",
-                "if(!(o instanceof Item)) return false; Item other=(Item)o; return other.id==id;",
-                "return false;"
-            ],
-            "answer": 2
-        },
-        {
-            "question": "(Python) Flatten list of lists: lists=[[1,2],[3,4 ]] flat=[ /* MISSING */ ]",
-            "choices": [
-                "for lst in lists: for x in lst: x",
-                "x for lst in lists for x in lst",
-                "[x for lst in lists for x in lst]",
-                "[lst for x in lists]"
-            ],
-            "answer": 2
-        },
-        {
-            "question": "(Haskell) applyTwice def: applyTwice :: (a->a)->a->a /* MISSING */",
-            "choices": [
-                "applyTwice f x = f (f x)",
-                "applyTwice f x = (f . f) x",
-                "applyTwice = \\f x -> f (f x)",
-                "All of the above"
-            ],
-            "answer": 3
-        },
-        {
-            "question": "(Prolog) Prevent backtracking (cut): once_say(X) :- say(X), /* MISSING */",
-            "choices": [
-                "!.",
-                "fail.",
-                "true.",
-                "repeat."
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(C) Reverse string: loop condition for(i=0,j=strlen(s)-1; /* MISSING */; i++,j--) { ... }",
-            "choices": [
-                "i < j",
-                "i <= j",
-                "i < strlen(s)",
-                "j >= 0"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Java) Thread-safe increment: class Counter { private int c=0; /* MISSING */ }",
-            "choices": [
-                "public void increment(){c++;}",
-                "public synchronized void increment(){c++;}",
-                "public void increment() throws Exception {c++;}",
-                "private void increment(){c++;}"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Python) Modify outer variable inside nested function: def outer(): count=0 def inner(): /* MISSING */ count += 1 return count return inner()",
-            "choices": [
-                "global count",
-                "local count",
-                "nonlocal count",
-                "outer.count"
-            ],
-            "answer": 2
-        },
-        {
-            "question": "(Haskell) Strict fold import: -- MISSING sumList = foldl' (+) 0",
-            "choices": [
-                "import Data.List (foldl')",
-                "import Prelude (foldl')",
-                "import Data.Maybe (foldl')",
-                "No import needed"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Prolog) Base case for list_len: list_len([_|T],N):-list_len(T,N1),N is N1+1 . /* MISSING */",
-            "choices": [
-                "list_len([],0).",
-                "list_len([],[]).",
-                "list_len([X],1).",
-                "list_len(X,0):-X = []."
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(C) fopen check and close: FILE *f=fopen(\"d\",\"r\" ); if(/* MISSING */) { /* read */ /* MISSING */ }",
-            "choices": [
-                "f==NULL / fclose(f);",
-                "f!=NULL / fclose(f);",
-                "f==0 / close(f);",
-                "fopen!=NULL / fclose(f);"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Java) Implement Shape.area(): interface Shape{ double area(); } class Circle /* MISSING */ { double r; Circle(double r){ this.r=r; } /* MISSING */ }",
-            "choices": [
-                "implements Shape / public double area(){return Math.PI*r*r;}",
-                "extends Shape / public double area(){...}",
-                "implements Shape / public int area(){...}",
-                "implements Shape / void area(){...}"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Python) Generator fib yield: def fib(n): a,b=0,1 for _ in range(n): /* MISSING */ a,b=b,a+b",
-            "choices": [
-                "print(a)",
-                "yield a",
-                "return a",
-                "yield b"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Haskell) List comprehension positives guard: positives xs = [ x | x <- xs, /* MISSING */ ]",
-            "choices": [
-                "x > 0",
-                "x >= 0",
-                "even x",
-                "x < 0"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Prolog) Negation-as-failure: not_parent(X,Y) :- /* MISSING */ parent(X,Y).",
-            "choices": [
-                "not parent(X,Y).",
-                "\\+ parent(X,Y).",
-                "! parent(X,Y).",
-                "fail parent(X,Y)."
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(C) Safe dynamic allocation: int *arr; int n=10; /* MISSING */",
-            "choices": [
-                "arr=malloc(sizeof(arr)*n);",
-                "arr=(int*)malloc(n*sizeof(int));",
-                "arr=malloc(n);",
-                "int arr[n];"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Java) Correct equals override (defensive): public boolean equals(Object o) { /* MISSING */ }",
-            "choices": [
-                "return this==o;",
-                "if(!(o instanceof Item)) return false; Item other=(Item)o; return other.id==id;",
-                "Item other=(Item)o; return other.id==id;",
-                "return false;"
-            ],
-            "answer": 1
-        },
-        {
-            "question": "(Python) Make function pure (no default mutable arg). Replace default `x=[]` with: def f(x=[]): x.append(1 ); return x # MISSING",
-            "choices": [
-                "def f(x=None): if x is None: x=[]; x.append(1); return x",
-                "def f(x=[]): x.append(1); return x",
-                "def f(): x=[]; x.append(1); return x",
-                "def f(x): x.append(1); return x"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Haskell) Implement map via foldr (fill skeleton): mymap f xs = /* MISSING */",
-            "choices": [
-                "foldr (\\x acc -> f x : acc) [] xs",
-                "foldl (\\acc x -> acc ++ [f x]) [] xs",
-                "map f xs",
-                "foldr (:) [] xs"
-            ],
-            "answer": 0
-        },
-        {
-            "question": "(Prolog) Use cut to get first solution only: foo(X) :- bar(X). bar(a). bar(b). once_foo(X) :- /* MISSING */",
-            "choices": [
-                "bar(X), !.",
-                "bar(X), fail.",
-                "once(bar(X)).",
-                "bar(X)."
-            ],
-            "answer": 0
-        }
+         {
+    "type": "code-snippet",
+    "question": "Expected output: 23 Which snippet?",
+    "choices": ["print(2 + 3)", "print(\"2\" + \"3\")", "print(2 * 3)", "print(\"five\")"],
+    "answer": 1
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 3 Which snippet?",
+    "choices": [
+      "printf(\"%d\\n\", 1 + 1);",
+      "printf(\"%d\\n\", 1 + 2);",
+      "printf(\"%d\\n\", 3 + 3);",
+      "printf(\"%d\\n\", 0);"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 0 1 2 Which snippet?",
+    "choices": [
+      "// Java for (int i = 0; i <= 2; i++) System.out.print(i + \" \");",
+      "// Java for (int i = 1; i <= 3; i++) System.out.print(i + \" \");",
+      "// Java int i = 0; while (i < 3) { System.out.print(i + \" \"); i++; }",
+      "// Java for (int i = 0; i < 3; i++) System.out.print(i + \" \");"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [2,4,6] Which snippet?",
+    "choices": [
+      "# Python lst = [1,2,3] print([x*2 for x in lst])",
+      "# Python lst = [1,2,3] print([x+x for x in lst if x%2==0])",
+      "# Python lst = [1,2,3 ] print(list(map(str,lst)))",
+      "# Python lst = [1,2,3] print([x*3 for x in lst])"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: true. Which snippet?",
+    "choices": [
+      "% Prolog ?- member(2,[1,2,3]).",
+      "# Python print(2 in [1,2,3])",
+      "// Java System.out.println(Arrays.asList(1,2,3).contains(3));",
+      "/* C */ printf(\"false”);"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: b Which snippet?",
+    "choices": [
+      "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[1]);",
+      "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[0]);",
+      "/* C */ char s[] = \"abc\"; printf(\"%c\\n\", s[2]);",
+      "/* C */ char s[] = \"abc\"; printf(\"%s\\n\", s[1]);"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: Hi! Which snippet?",
+    "choices": [
+      "// Java String s=\"Hi\"; s += \"!\"; System.out.println(s);",
+      "// Java String s=\"Hi\"; System.out.print(s);",
+      "// Java String s=\"Hi!\"; System.out.println(s.substring(1));",
+      "// Java String s=\"Hi\"; System.out.println(\"!\"+s);"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 3 Which snippet?",
+    "choices": [
+      "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", a[2]);",
+      "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", a[3]);",
+      "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", sizeof(a));",
+      "/* C */ int a[] = {1,2,3}; printf(\"%d\\n\", *a);"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [2,3] Which snippet?",
+    "choices": [
+      "-- Haskell map (+1) [1,2]",
+      "-- Haskell filter even [1..2]",
+      "-- Haskell [1,2,3]",
+      "-- Haskell [2,4]"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: true. Which snippet?",
+    "choices": [
+      "% Prolog likes(mary,pizza). ?- likes(mary,pizza).",
+      "# Python print(\"mary\" == \"mary\")",
+      "// Java System.out.println(true);",
+      "/* C */ printf(\"%d\\n\", 1);"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 6 Which snippet?",
+    "choices": [
+      "# Python def f(x): return x * 2 print(f(3))",
+      "# Python print(3 + 3)",
+      "# Java System.out.println(2 + 4);",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [1,2,3] Which snippet?",
+    "choices": [
+      "-- Haskell take 3 [1..]",
+      "-- Haskell take 0 [1..3]",
+      "-- Haskell head [1,2,3]",
+      "-- Haskell [1,2,3,4]"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 2 Which snippet?",
+    "choices": [
+      "/* C */ printf(\"%d\\n\", 5/2);",
+      "/* C */ printf(\"%d\\n\", 5.0/2.0);",
+      "// Java System.out.println(5/2.0);",
+      "// Java System.out.println(5/2);"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [1,2,3,4] Which snippet?",
+    "choices": [
+      "# Python a=[1,2]; a.extend([3,4]); print(a)",
+      "# Python a=[1,2]; print(a+[3,4,5])",
+      "# Python a=[1,2]; a.append([3,4]); print(a)",
+      "# Python a=[1,2]; print([1,2,3,4])"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: true Which snippet?",
+    "choices": [
+      "// Java String s = null; System.out.println(s == null);",
+      "// Java String s = \"\"; System.out.println(s.equals(null));",
+      "// Java System.out.println(true);",
+      "// Java String s = \"a\"; System.out.println(s == \"a\");"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [1,1,1] Which snippet?",
+    "choices": [
+      "# Python def f(x=[]): x.append(1 ); return x print(f()); print(f()); print(f())",
+      "# Python print([1,1,1])",
+      "# Python a=[1]; print(a*3)",
+      "# Python print([1]); print([1]); print([1])"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 1 Which snippet?",
+    "choices": [
+      "/* C */ int a=1; int *p=&a; printf(\"%d\\n\", *p);",
+      "/* C */ int a=1; printf(\"%d\\n\", a);",
+      "// Java int a=1; System.out.println(a);",
+      "All A, B, and C print 1"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [2,4,6] Which snippet?",
+    "choices": [
+      "-- Haskell map (*2) [1,2,3]",
+      "-- Haskell filter (>0) [1,2,3]",
+      "-- haskell map (+2) [0,2,4]",
+      "-- Haskell [2,4,6,8]"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 33 Which snippet?",
+    "choices": [
+      "// Java int[] a={1,2,3}; System.out.println(a[2]);",
+      "// Java int[] a={1,2,3}; System.out.println(a.length);",
+      "/* C */ printf(\"%d\\n\", 3);",
+      "/* C */ printf(\"%d\\n\", 33);"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: true. Which snippet?",
+    "choices": [
+      "% Prolog parent(alice,bob). ?- parent(alice,bob).",
+      "# Python print(True)",
+      "// Java System.out.println(true);",
+      "/* C */ printf(\"%d\\n\", 1);"
+    ],
+    "answer": 0
+  },
+   {
+    "type": "code-snippet",
+    "question": "Expected output: [0,1,1,2,3] Which snippet?",
+    "choices": [
+      "# Python def fib(n): a,b=0,1 out=[] for _ in range(n): out.append(a) a,b=b,a+b print(out)",
+      "-- Haskell take 5 (map fib [0..])",
+      "# Python print([0,1,1,2,3])",
+      "-- Haskell map (^2) [0..4]"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: [1,2,3] Which snippet?",
+    "choices": [
+      "-- Haskell take 3 [1..]",
+      "-- Haskell take 0 [1..3]",
+      "-- Haskell [1,2,3,4]",
+      "-- Haskell head [1,2,3]"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: 2 Which snippet?",
+    "choices": [
+      "/* C */ printf(\"%d\\n\", 5/2);",
+      "/* C */ printf(\"%d\\n\", 5.0/2.0);",
+      "// Java System.out.println(5/2.0);",
+      "// Java System.out.println(5/2);"
+    ],
+    "answer": 3
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: true. Which snippet?",
+    "choices": [
+      "% Prolog cat(tom). animal(X):-cat(X). ?- animal(tom).",
+      "# Python print(True)",
+      "// Java System.out.println(true)",
+      "/* C */ printf(\"%d\\n\", 1)"
+    ],
+    "answer": 0
+  },
+  {
+    "type": "code-snippet",
+    "question": "Expected output: Which snippet?",
+    "choices": [
+      "-- Haskell map (^2) [1,2,3]",
+      "# Python print([x*x for x in [1,2,3]])",
+      "Both A and B",
+      "Neither"
+    ],
+    "answer": 2
+  },
+  {
+      "type": "missing",
+      "question": "(C) Fill missing to swap ints via pointers: void swap(int *a,int *b) { /* MISSING */ }",
+      "choices": [
+        "int tmp; tmp = a; a = b; b = tmp;",
+        "int tmp; tmp = *a; *a = *b; *b = tmp;",
+        "*a = *b; *b = *a;",
+        "int tmp; tmp = &a; a = &b; b = &tmp;"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Java) Fill in the missing line class Car extends Vehicle { Car(String brand,int s,int d) { /* MISSING */ this.doors=d; } }",
+      "choices": [
+        "this.brand=brand; this.speed=s;",
+        "super(brand,s);",
+        "Vehicle(brand,s);",
+        "Car(brand,s);"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Python) Capture loop variable properly: funcs=[] for i in range(3 ): /* MISSING */ for f in funcs: print(f(2)) Expected: 0,2,4",
+      "choices": [
+        "funcs.append(lambda x: i * x)",
+        "funcs.append(lambda x, i=i: i * x)",
+        "funcs.append(lambda i: i * x)",
+        "funcs.append((lambda x: x * i)())"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Haskell) Factorial base case: factorial :: Integer -> Integer /* MISSING */ factorial n = n * factorial (n-1)",
+      "choices": [
+        "factorial 0 = 1",
+        "factorial 1 = 0",
+        "factorial n = 1",
+        "factorial = id"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Prolog) Sibling rule (not same person): parent(john,mary). parent(john,luke). /* MISSING */",
+      "choices": [
+        "sibling(X,Y):-parent(Z,X),parent(Z,Y).",
+        "sibling(X,Y):-parent(Z,X),parent(Z,Y), X \\= Y.",
+        "sibling(X,X):-parent(Z,X),parent(Z,X).",
+        "sibling(X,Y):-parent(X,Z),parent(Y,Z)."
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(C) Allocate array of n ints: int *arr; int n=10 ; /* MISSING */",
+      "choices": [
+        "arr=malloc(sizeof(arr)*n);",
+        "arr=(int*)malloc(n*sizeof(int));",
+        "arr=malloc(n);",
+        "int arr[n];"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Java) Override equals safely: public boolean equals(Object o) { /* MISSING */ }",
+      "choices": [
+        "return this==o;",
+        "Item other=(Item)o; return other.id==id;",
+        "if(!(o instanceof Item)) return false; Item other=(Item)o; return other.id==id;",
+        "return false;"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "missing",
+      "question": "(Python) Flatten list of lists: lists=[[1,2],[3,4 ]] flat=[ /* MISSING */ ]",
+      "choices": [
+        "for lst in lists: for x in lst: x",
+        "x for lst in lists for x in lst",
+        "[x for lst in lists for x in lst]",
+        "[lst for x in lists]"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "missing",
+      "question": "(Haskell) applyTwice def: applyTwice :: (a->a)->a->a /* MISSING */",
+      "choices": [
+        "applyTwice f x = f (f x)",
+        "applyTwice f x = (f . f) x",
+        "applyTwice = \\f x -> f (f x)",
+        "All of the above"
+      ],
+      "answer": 3
+    },
+    {
+      "type": "missing",
+      "question": "(Prolog) Prevent backtracking (cut): once_say(X) :- say(X), /* MISSING */",
+      "choices": [
+        "!.",
+        "fail.",
+        "true.",
+        "repeat."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(C) Reverse string: loop condition for(i=0,j=strlen(s)-1; /* MISSING */; i++,j--) { ... }",
+      "choices": [
+        "i < j",
+        "i <= j",
+        "i < strlen(s)",
+        "j >= 0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Java) Thread-safe increment: class Counter { private int c=0; /* MISSING */ }",
+      "choices": [
+        "public void increment(){c++;}",
+        "public synchronized void increment(){c++;}",
+        "public void increment() throws Exception {c++;}",
+        "private void increment(){c++;}"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Python) Modify outer variable inside nested function: def outer(): count=0 def inner(): /* MISSING */ count += 1 return count return inner()",
+      "choices": [
+        "global count",
+        "local count",
+        "nonlocal count",
+        "outer.count"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "missing",
+      "question": "(Haskell) Strict fold import: -- MISSING sumList = foldl' (+) 0",
+      "choices": [
+        "import Data.List (foldl')",
+        "import Prelude (foldl')",
+        "import Data.Maybe (foldl')",
+        "No import needed"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Prolog) Base case for list_len: list_len([_|T],N):-list_len(T,N1),N is N1+1 . /* MISSING */",
+      "choices": [
+        "list_len([],0).",
+        "list_len([],[]).",
+        "list_len([X],1).",
+        "list_len(X,0):-X = []."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(C) fopen check and close: FILE *f=fopen(\"d\",\"r\" ); if(/* MISSING */) { /* read */ /* MISSING */ }",
+      "choices": [
+        "f==NULL / fclose(f);",
+        "f!=NULL / fclose(f);",
+        "f==0 / close(f);",
+        "fopen!=NULL / fclose(f);"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Java) Implement Shape.area(): interface Shape{ double area(); } class Circle /* MISSING */ { double r; Circle(double r){ this.r=r; } /* MISSING */ }",
+      "choices": [
+        "implements Shape / public double area(){return Math.PI*r*r;}",
+        "extends Shape / public double area(){...}",
+        "implements Shape / public int area(){...}",
+        "implements Shape / void area(){...}"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Python) Generator fib yield: def fib(n): a,b=0,1 for _ in range(n): /* MISSING */ a,b=b,a+b",
+      "choices": [
+        "print(a)",
+        "yield a",
+        "return a",
+        "yield b"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Haskell) List comprehension positives guard: positives xs = [ x | x <- xs, /* MISSING */ ]",
+      "choices": [
+        "x > 0",
+        "x >= 0",
+        "even x",
+        "x < 0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Prolog) Negation-as-failure: not_parent(X,Y) :- /* MISSING */ parent(X,Y).",
+      "choices": [
+        "not parent(X,Y).",
+        "\\+ parent(X,Y).",
+        "! parent(X,Y).",
+        "fail parent(X,Y)."
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(C) Safe dynamic allocation: int *arr; int n=10; /* MISSING */",
+      "choices": [
+        "arr=malloc(sizeof(arr)*n);",
+        "arr=(int*)malloc(n*sizeof(int));",
+        "arr=malloc(n);",
+        "int arr[n];"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Java) Correct equals override (defensive): public boolean equals(Object o) { /* MISSING */ }",
+      "choices": [
+        "return this==o;",
+        "if(!(o instanceof Item)) return false; Item other=(Item)o; return other.id==id;",
+        "Item other=(Item)o; return other.id==id;",
+        "return false;"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "missing",
+      "question": "(Python) Make function pure (no default mutable arg). Replace default `x=[]` with: def f(x=[]): x.append(1 ); return x # MISSING",
+      "choices": [
+        "def f(x=None): if x is None: x=[]; x.append(1); return x",
+        "def f(x=[]): x.append(1); return x",
+        "def f(): x=[]; x.append(1); return x",
+        "def f(x): x.append(1); return x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Haskell) Implement map via foldr (fill skeleton): mymap f xs = /* MISSING */",
+      "choices": [
+        "foldr (\\x acc -> f x : acc) [] xs",
+        "foldl (\\acc x -> acc ++ [f x]) [] xs",
+        "map f xs",
+        "foldr (:) [] xs"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "missing",
+      "question": "(Prolog) Use cut to get first solution only: foo(X) :- bar(X). bar(a). bar(b). once_foo(X) :- /* MISSING */",
+      "choices": [
+        "bar(X), !.",
+        "bar(X), fail.",
+        "once(bar(X)).",
+        "bar(X)."
+      ],
+      "answer": 0
+    }
     ]
 }

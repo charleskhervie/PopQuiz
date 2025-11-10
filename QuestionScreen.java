@@ -1,8 +1,12 @@
 
+
 import javax.swing.*;
+import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.util.*;
+import java.util.List;
 
 public class QuestionScreen implements Screen {
     private JPanel panel;
@@ -18,6 +22,10 @@ public class QuestionScreen implements Screen {
     
     private int requiredCorrect;
     private ImageIcon heartIcon;
+    
+    // Track the shuffled order
+    private List<Integer> shuffledIndices;
+    private int correctAnswerPosition;
 
     public QuestionScreen(GradeManager gradeManager, Runnable onStageComplete, Runnable onGameOver) {
         this.gradeManager = gradeManager;
@@ -134,6 +142,17 @@ public class QuestionScreen implements Screen {
         }
 
         Question q = gradeManager.getCurrentQuestion();
+        
+        // Check if we ran out of unused questions
+        if (q == null) {
+            JOptionPane.showMessageDialog(panel, 
+                "Not enough unique questions available to complete this grade!", 
+                "Insufficient Questions", 
+                JOptionPane.WARNING_MESSAGE);
+            onGameOver.run();
+            return;
+        }
+        
         int correctAnswers = gradeManager.getCorrectAnswers();
 
         questionCounter.setText("Correct: " + correctAnswers + " / " + requiredCorrect);
@@ -141,9 +160,29 @@ public class QuestionScreen implements Screen {
         questionLabel.setText("<html><div style='text-align:center;'>" + q.getQuestion() + "</div></html>");
 
         String[] choices = q.getChoices();
+        int correctAnswerIndex = q.getAnswer();
+        
+        // Create a list of indices and shuffle them
+        shuffledIndices = new ArrayList<>();
+        for (int i = 0; i < choices.length; i++) {
+            shuffledIndices.add(i);
+        }
+        Collections.shuffle(shuffledIndices);
+        
+        // Find where the correct answer ended up after shuffling
+        correctAnswerPosition = -1;
+        for (int i = 0; i < shuffledIndices.size(); i++) {
+            if (shuffledIndices.get(i) == correctAnswerIndex) {
+                correctAnswerPosition = i;
+                break;
+            }
+        }
+        
+        // Display choices in shuffled order
         for (int i = 0; i < choiceButtons.length; i++) {
-            if (i < choices.length) {
-                choiceButtons[i].setText(choices[i]);
+            if (i < shuffledIndices.size()) {
+                int originalIndex = shuffledIndices.get(i);
+                choiceButtons[i].setText(choices[originalIndex]);
                 choiceButtons[i].setEnabled(true);
                 choiceButtons[i].setBackground(Color.WHITE);
                 choiceButtons[i].setForeground(Color.BLACK);
@@ -158,16 +197,15 @@ public class QuestionScreen implements Screen {
         progressBar.setValue(progress);
     }
 
-    private void checkAnswer(int index) {
-        Question q = gradeManager.getCurrentQuestion();
-        int correct = q.getAnswer();
-        boolean isCorrect = (index == correct);
+    private void checkAnswer(int buttonIndex) {
+        // Check if the button clicked corresponds to the correct answer position
+        boolean isCorrect = (buttonIndex == correctAnswerPosition);
 
         for (int i = 0; i < choiceButtons.length; i++) {
-            if (i == correct) {
+            if (i == correctAnswerPosition) {
                 choiceButtons[i].setBackground(new Color(46, 204, 113)); // Green
                 choiceButtons[i].setForeground(Color.WHITE);
-            } else if (i == index) {
+            } else if (i == buttonIndex) {
                 choiceButtons[i].setBackground(new Color(231, 76, 60)); // Red
                 choiceButtons[i].setForeground(Color.WHITE);
             } else {
@@ -176,6 +214,9 @@ public class QuestionScreen implements Screen {
             }
             choiceButtons[i].setEnabled(false);
         }
+
+        // Mark this question as used regardless of correct/incorrect
+        gradeManager.markQuestionAsUsed();
 
         if (isCorrect) {
             // Record the correct answer
