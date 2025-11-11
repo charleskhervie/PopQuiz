@@ -1,14 +1,23 @@
+
+
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Question {
+    private String type;
     private String question;
     private String[] choices;
     private int answer;
-    private String type; // "theoretical" or "programming"
 
-    public Question(String question, String[] choices, int answer, String type) {
+    public Question(String type, String question, String[] choices, int answer) {
+        this.type = type;
         this.question = question;
         this.choices = choices;
         this.answer = answer;
-        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String getQuestion() {
@@ -23,7 +32,21 @@ public class Question {
         return answer;
     }
 
-    public String getType(){
-        return type;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Question question1 = (Question) o;
+        return answer == question1.answer &&
+               Objects.equals(type, question1.type) &&
+               Objects.equals(question, question1.question) &&
+               Arrays.equals(choices, question1.choices);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(type, question, answer);
+        result = 31 * result + Arrays.hashCode(choices);
+        return result;
     }
 }

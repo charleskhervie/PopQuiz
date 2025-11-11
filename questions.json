@@ -716,13 +716,13 @@
         },
         {
             "type": "output",
-            "question": "(Java) What prints? for (int i = 0; i < 3; i++) System.out.print(i + \" \");",
+            "question": "(Java) What prints? for(int i = 0; i < 3; i++){ System.out.print(i + \" \");}",
             "choices": ["0 1 2", "1 2 3", "0 1 2 3", "012"],
             "answer": 0
         },
         {
             "type": "output",
-            "question": "(Haskell) What is the value? map (+1) [0,1]",
+            "question": "(Haskell) What is the value? map (+1)[0,1]",
             "choices": ["[0,1]", "[1,2]", "[2,3]", "Error"],
             "answer": 2
         },
@@ -873,10 +873,10 @@
     "type": "code-snippet",
     "question": "Expected output: 0 1 2 Which snippet?",
     "choices": [
-      "// Java for (int i = 0; i <= 2; i++) System.out.print(i + \" \");",
-      "// Java for (int i = 1; i <= 3; i++) System.out.print(i + \" \");",
+      "// Java for (int i = 0; i <= 2; i++){System.out.print(i + \" \");}",
+      "// Java for (int i = 1; i <= 3; i++) System.out.print(i + \" \");}",
       "// Java int i = 0; while (i < 3) { System.out.print(i + \" \"); i++; }",
-      "// Java for (int i = 0; i < 3; i++) System.out.print(i + \" \");"
+      "// Java for (int i = 0; i < 3; i++){ System.out.print(i + \" \")};"
     ],
     "answer": 3
   },
