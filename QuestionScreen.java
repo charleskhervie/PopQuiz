@@ -9,8 +9,8 @@ import javax.swing.Timer;
 public class QuestionScreen implements Screen {
     private JPanel panel;
     private JLabel questionLabel;
-    private JTextArea questionTextArea; // For programming questions
-    private JScrollPane questionScrollPane; // <- made this a field
+    private JTextArea questionTextArea; 
+    private JScrollPane questionScrollPane;
     private JButton[] choiceButtons;
     private JPanel livesPanel;
     private JProgressBar progressBar;
@@ -23,7 +23,6 @@ public class QuestionScreen implements Screen {
     private int requiredCorrect;
     private ImageIcon heartIcon;
 
-    // Track the shuffled order
     private List<Integer> shuffledIndices;
     private int correctAnswerPosition;
 
@@ -33,7 +32,6 @@ public class QuestionScreen implements Screen {
         this.onGameOver = onGameOver;
         this.requiredCorrect = gradeManager.getRequiredCorrect();
 
-        // Load heart icon
         try {
             ImageIcon originalIcon = new ImageIcon("./assets/lives.png");
             Image scaledImage = originalIcon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
@@ -66,7 +64,6 @@ public class QuestionScreen implements Screen {
         centerPanel.setBorder(BorderFactory.createEmptyBorder(40, 60, 40, 60));
         centerPanel.setOpaque(false);
 
-        // Regular question label (for theoretical questions)
         questionLabel = new JLabel("Question text here");
         questionLabel.setFont(new Font("Arial", Font.BOLD, 20));
         questionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -74,7 +71,6 @@ public class QuestionScreen implements Screen {
         questionLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
         questionLabel.setForeground(Color.WHITE);
 
-        // Text area for programming questions (with scroll)
         questionTextArea = new JTextArea(6, 50);
         questionTextArea.setFont(new Font("Courier New", Font.PLAIN, 14));
         questionTextArea.setEditable(false);
@@ -88,7 +84,6 @@ public class QuestionScreen implements Screen {
             BorderFactory.createEmptyBorder(10, 10, 10, 10)
         ));
 
-        // make the scroll pane a field so we can toggle its visibility
         questionScrollPane = new JScrollPane(questionTextArea);
         questionScrollPane.setOpaque(false);
         questionScrollPane.getViewport().setOpaque(false);
@@ -149,9 +144,8 @@ public class QuestionScreen implements Screen {
         bottomPanel.add(livesPanel, BorderLayout.EAST);
         panel.add(bottomPanel, BorderLayout.SOUTH);
 
-        // initialize visibility: hide scroll pane by default (assuming theoretical is default)
         questionScrollPane.setVisible(false);
-        questionTextArea.setVisible(true); // keep textArea visible (it is inside the scrollpane)
+        questionTextArea.setVisible(true); 
         showNextQuestion();
     }
 
@@ -183,33 +177,28 @@ public class QuestionScreen implements Screen {
         boolean isProgramming = isProgrammingQuestion(q);
 
         if (isProgramming) {
-            // Hide label, show scroll pane for programming questions
             questionLabel.setVisible(false);
             questionScrollPane.setVisible(true);
             questionTextArea.setText(formatProgrammingText(q.getQuestion()));
             questionTextArea.setCaretPosition(0);
         } else {
-            // Show label, hide scroll pane for theoretical questions
             questionLabel.setVisible(true);
             questionScrollPane.setVisible(false);
             questionLabel.setText("<html><div style='text-align:center;'>" + q.getQuestion() + "</div></html>");
         }
 
-        // Force layout update so the border/space disappears
         panel.revalidate();
         panel.repaint();
 
         String[] choices = q.getChoices();
         int correctAnswerIndex = q.getAnswer();
 
-        // Create a list of indices and shuffle them
         shuffledIndices = new ArrayList<>();
         for (int i = 0; i < choices.length; i++) {
             shuffledIndices.add(i);
         }
         Collections.shuffle(shuffledIndices);
 
-        // Find where the correct answer ended up after shuffling
         correctAnswerPosition = -1;
         for (int i = 0; i < shuffledIndices.size(); i++) {
             if (shuffledIndices.get(i) == correctAnswerIndex) {
@@ -218,17 +207,14 @@ public class QuestionScreen implements Screen {
             }
         }
 
-        // Display choices in shuffled order
         for (int i = 0; i < choiceButtons.length; i++) {
             if (i < shuffledIndices.size()) {
                 int originalIndex = shuffledIndices.get(i);
                 String choiceText = choices[originalIndex];
 
                 if (isProgramming) {
-                    // Format programming choices - keep them compact
                     choiceText = formatProgrammingText(choiceText);
                     choiceButtons[i].setFont(new Font("Courier New", Font.PLAIN, 12));
-                    // Use HTML to preserve formatting and make text smaller
                     choiceText = "<html><pre style='font-family: Courier New; font-size: 10px;'>" +
                                 choiceText.replace("<", "&lt;").replace(">", "&gt;") +
                                 "</pre></html>";
@@ -246,13 +232,11 @@ public class QuestionScreen implements Screen {
             }
         }
 
-        // Update progress bar based on correct answers
         int progress = gradeManager.getProgress();
         progressBar.setValue(progress);
     }
 
     private void checkAnswer(int buttonIndex) {
-        // Check if the button clicked corresponds to the correct answer position
         boolean isCorrect = (buttonIndex == correctAnswerPosition);
 
         for (int i = 0; i < choiceButtons.length; i++) {
@@ -269,14 +253,11 @@ public class QuestionScreen implements Screen {
             choiceButtons[i].setEnabled(false);
         }
 
-        // Mark this question as used regardless of correct/incorrect
         gradeManager.markQuestionAsUsed();
 
         if (isCorrect) {
-            // Record the correct answer
             gradeManager.recordCorrectAnswer();
         } else {
-            // Lost a life
             gradeManager.loseLife();
             updateLivesDisplay();
 
@@ -309,7 +290,6 @@ public class QuestionScreen implements Screen {
                 livesPanel.add(heartLabel);
             }
         } else {
-            // Fallback to text if image can't be loaded
             JLabel livesLabel = new JLabel("Lives: ");
             livesLabel.setFont(new Font("Arial", Font.PLAIN, 18));
             livesLabel.setForeground(Color.WHITE);
