@@ -6,10 +6,10 @@ public class GradeManager {
     private int grade = 1;
     private int lives = 5;
     private List<Question> currentQuestions = new ArrayList<>();
-    private Set<Question> usedQuestions = new HashSet<>(); // Track used questions
+    private Set<Question> usedQuestionsGlobal = new HashSet<>(); // Track used questions across entire playthrough
+    private Set<Question> usedQuestionsThisGrade = new HashSet<>(); // Track used questions in current grade
     private int currentIndex = 0;
     private int correctAnswers = 0;
-    private Random rand = new Random();
     private List<Question> theoreticalPool;
     private List<Question> programmingPool;
     
@@ -18,39 +18,41 @@ public class GradeManager {
         this.programmingPool = new ArrayList<>(programming);
     }
     
-    // Number of CORRECT answers required per grade
     private static final int[] TOTAL_PER_GRADE = {5, 10, 15, 20, 25};
     
-    // Theoretical/Programming distribution per grade
     private static final int[][] DISTRIBUTION = {
-        {3, 2},  // G1: 3 theoretical, 2 programming = 5 total
-        {5, 5},  // G2: 5 theoretical, 5 programming = 10 total
-        {8, 7},  // G3: 8 theoretical, 7 programming = 15 total
-        {10, 10},// G4: 10 theoretical, 10 programming = 20 total
-        {13, 12} // G5: 13 theoretical, 12 programming = 25 total
+        {3, 2}, 
+        {5, 5},  
+        {8, 7}, 
+        {10, 10},
+        {13, 12} 
     };
     
     public void startGrade() {
         currentQuestions.clear();
+        usedQuestionsThisGrade.clear(); 
         currentIndex = 0;
         correctAnswers = 0;
         
+        loadQuestionsForGrade();
+    }
+    
+    private void loadQuestionsForGrade() {
         int[] dist = DISTRIBUTION[grade - 1];
         int theoryCount = dist[0];
         int progCount = dist[1];
         
-        // Get unused theoretical questions
         List<Question> availableTheoretical = new ArrayList<>();
         for (Question q : theoreticalPool) {
-            if (!usedQuestions.contains(q)) {
+            if (!usedQuestionsGlobal.contains(q) && !usedQuestionsThisGrade.contains(q)) {
                 availableTheoretical.add(q);
             }
         }
         
-        // Get unused programming questions
+       
         List<Question> availableProgramming = new ArrayList<>();
         for (Question q : programmingPool) {
-            if (!usedQuestions.contains(q)) {
+            if (!usedQuestionsGlobal.contains(q) && !usedQuestionsThisGrade.contains(q)) {
                 availableProgramming.add(q);
             }
         }
@@ -58,27 +60,39 @@ public class GradeManager {
         Collections.shuffle(availableTheoretical);
         Collections.shuffle(availableProgramming);
         
-        // Add theoretical questions
+        int theoreticalAdded = 0;
         for (int i = 0; i < theoryCount && i < availableTheoretical.size(); i++) {
             currentQuestions.add(availableTheoretical.get(i));
+            theoreticalAdded++;
         }
         
-        // Add programming questions
+        int programmingAdded = 0;
         for (int i = 0; i < progCount && i < availableProgramming.size(); i++) {
             currentQuestions.add(availableProgramming.get(i));
+            programmingAdded++;
+        }
+        
+        if (theoreticalAdded < theoryCount || programmingAdded < progCount) {
+            System.err.println("Warning: Grade " + grade + " - Expected " + theoryCount + " theoretical and " + progCount + " programming");
+            System.err.println("Got " + theoreticalAdded + " theoretical and " + programmingAdded + " programming");
+            System.err.println("Theoretical pool size: " + theoreticalPool.size());
+            System.err.println("Programming pool size: " + programmingPool.size());
+            System.err.println("Used globally: " + usedQuestionsGlobal.size());
         }
         
         Collections.shuffle(currentQuestions);
-        
-        if (currentQuestions.isEmpty()) {
-            System.err.println("Warning: No unused questions available for grade " + grade);
-        }
     }
     
     public Question getCurrentQuestion() {
+        if (currentIndex >= currentQuestions.size()) {
+            loadQuestionsForGrade();
+            currentIndex = 0;
+        }
+        
         if (currentIndex < currentQuestions.size()) {
             return currentQuestions.get(currentIndex);
         }
+        
         return null;
     }
     
@@ -88,12 +102,13 @@ public class GradeManager {
     
     public void markQuestionAsUsed() {
         if (currentIndex < currentQuestions.size()) {
-            usedQuestions.add(currentQuestions.get(currentIndex));
+            Question q = currentQuestions.get(currentIndex);
+            usedQuestionsThisGrade.add(q);
+            usedQuestionsGlobal.add(q); 
         }
     }
     
     public boolean hasNext() {
-        // Continue until we have enough correct answers
         return correctAnswers < TOTAL_PER_GRADE[grade - 1];
     }
     

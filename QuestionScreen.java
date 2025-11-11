@@ -1,12 +1,11 @@
 
-
 import javax.swing.*;
-import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.List;
+import javax.swing.Timer;
 
 public class QuestionScreen implements Screen {
     private JPanel panel;
@@ -33,11 +32,6 @@ public class QuestionScreen implements Screen {
         this.onGameOver = onGameOver;
         this.requiredCorrect = gradeManager.getRequiredCorrect();
 
-        // Stop any previous audio and play question screen music
-        AudioPlayer.stopAll();
-        AudioPlayer.playSound("./audio/QuestionScreen.wav", true);
-
-        // Load heart icon
         try {
             ImageIcon originalIcon = new ImageIcon("./assets/lives.png");
             Image scaledImage = originalIcon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
@@ -101,10 +95,7 @@ public class QuestionScreen implements Screen {
             btn.setContentAreaFilled(true);
 
             int index = i;
-            btn.addActionListener(e -> {
-                AudioPlayer.playSound("./audio/Click.wav", false);
-                checkAnswer(index);
-            });
+            btn.addActionListener(e -> checkAnswer(index));
 
             int keyCode = KeyEvent.VK_1 + i;
             btn.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
@@ -142,17 +133,6 @@ public class QuestionScreen implements Screen {
         }
 
         Question q = gradeManager.getCurrentQuestion();
-        
-        // Check if we ran out of unused questions
-        if (q == null) {
-            JOptionPane.showMessageDialog(panel, 
-                "Not enough unique questions available to complete this grade!", 
-                "Insufficient Questions", 
-                JOptionPane.WARNING_MESSAGE);
-            onGameOver.run();
-            return;
-        }
-        
         int correctAnswers = gradeManager.getCorrectAnswers();
 
         questionCounter.setText("Correct: " + correctAnswers + " / " + requiredCorrect);
@@ -162,14 +142,12 @@ public class QuestionScreen implements Screen {
         String[] choices = q.getChoices();
         int correctAnswerIndex = q.getAnswer();
         
-        // Create a list of indices and shuffle them
         shuffledIndices = new ArrayList<>();
         for (int i = 0; i < choices.length; i++) {
             shuffledIndices.add(i);
         }
         Collections.shuffle(shuffledIndices);
         
-        // Find where the correct answer ended up after shuffling
         correctAnswerPosition = -1;
         for (int i = 0; i < shuffledIndices.size(); i++) {
             if (shuffledIndices.get(i) == correctAnswerIndex) {
@@ -178,7 +156,6 @@ public class QuestionScreen implements Screen {
             }
         }
         
-        // Display choices in shuffled order
         for (int i = 0; i < choiceButtons.length; i++) {
             if (i < shuffledIndices.size()) {
                 int originalIndex = shuffledIndices.get(i);
@@ -192,13 +169,11 @@ public class QuestionScreen implements Screen {
             }
         }
 
-        // Update progress bar based on correct answers
         int progress = gradeManager.getProgress();
         progressBar.setValue(progress);
     }
 
     private void checkAnswer(int buttonIndex) {
-        // Check if the button clicked corresponds to the correct answer position
         boolean isCorrect = (buttonIndex == correctAnswerPosition);
 
         for (int i = 0; i < choiceButtons.length; i++) {
@@ -215,14 +190,11 @@ public class QuestionScreen implements Screen {
             choiceButtons[i].setEnabled(false);
         }
 
-        // Mark this question as used regardless of correct/incorrect
         gradeManager.markQuestionAsUsed();
 
         if (isCorrect) {
-            // Record the correct answer
             gradeManager.recordCorrectAnswer();
         } else {
-            // Lost a life
             gradeManager.loseLife();
             updateLivesDisplay();
 
@@ -255,7 +227,6 @@ public class QuestionScreen implements Screen {
                 livesPanel.add(heartLabel);
             }
         } else {
-            // Fallback to text if image can't be loaded
             JLabel livesLabel = new JLabel("Lives: ");
             livesLabel.setFont(new Font("Arial", Font.PLAIN, 18));
             livesLabel.setForeground(Color.WHITE);
