@@ -893,12 +893,12 @@
   },
   {
     "type": "code-snippet",
-    "question": "Expected output: true. Which snippet?",
+    "question": "Expected output: true.\n\nWhich snippet?",
     "choices": [
-      "% Prolog ?- member(2,[1,2,3]).",
-      "# Python print(2 in [1,2,3])",
-      "// Java System.out.println(Arrays.asList(1,2,3).contains(3));",
-      "/* C */ printf(\"false”);"
+      "% Prolog\n?- member(2,[1,2,3]).",
+      "# Python\nprint(2 in [1,2,3])",
+      "// Java\nSystem.out.println(Arrays.asList(1,2,3).contains(3));",
+      "/* C */\nprintf(\"false\");"
     ],
     "answer": 0
   },
@@ -1080,12 +1080,12 @@
   },
   {
     "type": "code-snippet",
-    "question": "Expected output: [1,2,3] Which snippet?",
+    "question": "Expected output: [1,2,3]\n\nWhich snippet?",
     "choices": [
-      "-- Haskell take 3 [1..]",
-      "-- Haskell take 0 [1..3]",
-      "-- Haskell [1,2,3,4]",
-      "-- Haskell head [1,2,3]"
+      "-- Haskell\ntake 3 [1..]",
+      "-- Haskell\ntake 0 [1..3]",
+      "-- Haskell\n[1,2,3,4]",
+      "-- Haskell\nhead [1,2,3]"
     ],
     "answer": 0
   },
@@ -1124,7 +1124,7 @@
   },
   {
       "type": "missing",
-      "question": "(C) Fill missing to swap ints via pointers: void swap(int *a,int *b) { /* MISSING */ }",
+      "question": "(C) Fill missing to swap ints via pointers:\n\nvoid swap(int *a,int *b) {\n  /* MISSING */\n}",
       "choices": [
         "int tmp; tmp = a; a = b; b = tmp;",
         "int tmp; tmp = *a; *a = *b; *b = tmp;",
