@@ -154,116 +154,12 @@ public class QuestionScreen implements Screen {
         return type != null && (type.equals("output") || type.equals("code-snippet") || type.equals("missing"));
     }
 
-    private String detectLanguage(String text) {
-        String lowerText = text.toLowerCase();
-        if (lowerText.startsWith("(haskell)")) return "haskell";
-        if (lowerText.startsWith("(java)")) return "java";
-        if (lowerText.startsWith("(python)")) return "python";
-        if (lowerText.startsWith("(c++)")) return "c++";
-        if (lowerText.startsWith("(c)")) return "c";
-        if (lowerText.startsWith("(javascript)")) return "javascript";
-        // Add more languages as needed
-        return "unknown";
-    }
-
-    private String formatProgrammingText(String text, boolean isQuestion, String questionType) {
-        // Unescape common escape sequences
+    private String formatProgrammingText(String text) {
+        // Simply unescape the escape sequences from JSON
         text = text.replace("\\n", "\n");
         text = text.replace("\\t", "    ");
         text = text.replace("\\\"", "\"");
-
-        // Only format if it's a question OR if it's a code-snippet type choice
-        if (!isQuestion && !questionType.equals("code-snippet")) {
-            return text; // Don't format choices for output and missing types
-        }
-
-        // Detect language
-        String language = detectLanguage(text);
-        
-        StringBuilder formatted = new StringBuilder();
-        boolean firstQuestionMarkFound = false;
-        
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            formatted.append(c);
-            
-            // Haskell: ONLY add newlines after dots
-            if (language.equals("haskell")) {
-                if (c == '.') {
-                    // Check if this is not a decimal point
-                    boolean isDecimal = false;
-                    if (i > 0 && i + 1 < text.length()) {
-                        char prev = text.charAt(i - 1);
-                        char next = text.charAt(i + 1);
-                        if (Character.isDigit(prev) && Character.isDigit(next)) {
-                            isDecimal = true;
-                        }
-                    }
-                    if (!isDecimal && i + 1 < text.length() && text.charAt(i + 1) != '\n') {
-                        formatted.append('\n');
-                    }
-                }
-            }
-            // Python: Add newline and tab after colons
-            else if (language.equals("python")) {
-                if (c == ':') {
-                    if (i + 1 < text.length() && text.charAt(i + 1) != '\n') {
-                        formatted.append('\n');
-                        formatted.append("    "); // Add tab (4 spaces)
-                    }
-                }
-                // Add newline after first question mark
-                else if (c == '?' && !firstQuestionMarkFound) {
-                    formatted.append('\n');
-                    firstQuestionMarkFound = true;
-                }
-            }
-            // Other languages (Java, C++, etc.)
-            else {
-                // Add newline after semicolon
-                if (c == ';') {
-                    if (i + 1 < text.length()) {
-                        char next = text.charAt(i + 1);
-                        if (next != '\n' && next != '}') {
-                            formatted.append('\n');
-                        }
-                    } else {
-                        formatted.append('\n');
-                    }
-                }
-                // Add newline after opening brace
-                else if (c == '{') {
-                    if (i + 1 < text.length() && text.charAt(i + 1) != '\n') {
-                        formatted.append('\n');
-                    }
-                }
-                // Add newline after closing brace
-                else if (c == '}') {
-                    if (i + 1 < text.length() && text.charAt(i + 1) != '\n') {
-                        formatted.append('\n');
-                    }
-                }
-                // Add newline after opening bracket
-                else if (c == '[') {
-                    if (i + 1 < text.length() && text.charAt(i + 1) != '\n') {
-                        formatted.append('\n');
-                    }
-                }
-                // Add newline after closing bracket
-                else if (c == ']') {
-                    if (i + 1 < text.length() && text.charAt(i + 1) != '\n') {
-                        formatted.append('\n');
-                    }
-                }
-                // Add newline after first question mark
-                else if (c == '?' && !firstQuestionMarkFound) {
-                    formatted.append('\n');
-                    firstQuestionMarkFound = true;
-                }
-            }
-        }
-
-        return formatted.toString();
+        return text;
     }
 
     private void showNextQuestion() {
@@ -282,7 +178,7 @@ public class QuestionScreen implements Screen {
         if (isProgramming) {
             questionLabel.setVisible(false);
             questionScrollPane.setVisible(true);
-            questionTextArea.setText(formatProgrammingText(q.getQuestion(), true, q.getType()));
+            questionTextArea.setText(formatProgrammingText(q.getQuestion()));
             questionTextArea.setCaretPosition(0);
         } else {
             questionLabel.setVisible(true);
@@ -310,16 +206,14 @@ public class QuestionScreen implements Screen {
             }
         }
 
-        boolean isCodeSnippet = q.getType() != null && q.getType().equals("code-snippet");
-
         for (int i = 0; i < choiceButtons.length; i++) {
             if (i < shuffledIndices.size()) {
                 int originalIndex = shuffledIndices.get(i);
                 String choiceText = choices[originalIndex];
 
                 if (isProgramming) {
-                    // Format choices only for code-snippet type, otherwise just unescape
-                    choiceText = formatProgrammingText(choiceText, false, q.getType());
+                    // Simply unescape the text
+                    choiceText = formatProgrammingText(choiceText);
                     
                     choiceButtons[i].setFont(new Font("Courier New", Font.PLAIN, 12));
                     choiceText = "<html><pre style='font-family: Courier New; font-size: 10px;'>" +
