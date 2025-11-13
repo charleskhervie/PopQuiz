@@ -2,3 +2,6 @@ IN CMD/POWERSHELL
 
 javac -cp ".;lib/json-simple-1.1.1.jar" *.java
 java  -cp ".;lib/json-simple-1.1.1.jar" PopQuiz
+
+!IMPORTANT!
+java -jar PopQuiz.jar --- for splash screen
