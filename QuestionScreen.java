@@ -61,18 +61,18 @@ public class QuestionScreen implements Screen {
 
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.setBorder(BorderFactory.createEmptyBorder(40, 60, 40, 60));
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(150, 60, 40, 60));
         centerPanel.setOpaque(false);
 
         questionLabel = new JLabel("Question text here");
-        questionLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        questionLabel.setFont(new Font("Arial", Font.BOLD, 26));
         questionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         questionLabel.setHorizontalAlignment(SwingConstants.CENTER);
         questionLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
         questionLabel.setForeground(Color.WHITE);
 
         questionTextArea = new JTextArea(6, 50);
-        questionTextArea.setFont(new Font("Courier New", Font.PLAIN, 14));
+        questionTextArea.setFont(new Font("Courier New", Font.PLAIN, 16));
         questionTextArea.setEditable(false);
         questionTextArea.setLineWrap(false);
         questionTextArea.setWrapStyleWord(false);
@@ -98,22 +98,26 @@ public class QuestionScreen implements Screen {
         questionCounter.setAlignmentX(Component.CENTER_ALIGNMENT);
         questionCounter.setForeground(Color.WHITE);
         centerPanel.add(questionCounter);
-        centerPanel.add(Box.createVerticalStrut(20));
+        
+        panel.add(centerPanel, BorderLayout.CENTER);
 
+        // Bottom panel with choices and lives
+        JPanel bottomPanel = new JPanel(new BorderLayout());
+        bottomPanel.setOpaque(false);
+
+        // Choice buttons panel - fixed at center bottom with spacing from bottom
+        JPanel choicesContainer = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        choicesContainer.setOpaque(false);
+        choicesContainer.setBorder(BorderFactory.createEmptyBorder(0, 0, 80, 0));
+        
         choiceButtons = new JButton[4];
-        JPanel choicesPanel = new JPanel(new GridLayout(2, 2, 20, 20));
+        JPanel choicesPanel = new JPanel(new GridLayout(2, 2, 18, 18));
         choicesPanel.setOpaque(false);
-        choicesPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        choicesPanel.setPreferredSize(new Dimension(800, 160));
 
+        String[] labels = {"A", "B", "C", "D"};
         for (int i = 0; i < 4; i++) {
-            JButton btn = new JButton("Choice " + (i + 1));
-            btn.setFont(new Font("Arial", Font.PLAIN, 16));
-            btn.setBackground(Color.WHITE);
-            btn.setForeground(Color.BLACK);
-            btn.setOpaque(true);
-            btn.setBorderPainted(true);
-            btn.setFocusPainted(false);
-            btn.setContentAreaFilled(true);
+            CompactChoiceButton btn = new CompactChoiceButton(labels[i], "Choice " + (i + 1));
 
             int index = i;
             btn.addActionListener(e -> checkAnswer(index));
@@ -131,17 +135,16 @@ public class QuestionScreen implements Screen {
             choicesPanel.add(btn);
         }
 
-        centerPanel.add(choicesPanel);
-        panel.add(centerPanel, BorderLayout.CENTER);
+        choicesContainer.add(choicesPanel);
+        bottomPanel.add(choicesContainer, BorderLayout.CENTER);
 
+        // Lives panel at the absolute bottom-right corner
         livesPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         livesPanel.setOpaque(false);
         livesPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 20));
         updateLivesDisplay();
-
-        JPanel bottomPanel = new JPanel(new BorderLayout());
-        bottomPanel.setOpaque(false);
-        bottomPanel.add(livesPanel, BorderLayout.EAST);
+        
+        bottomPanel.add(livesPanel, BorderLayout.SOUTH);
         panel.add(bottomPanel, BorderLayout.SOUTH);
 
         questionScrollPane.setVisible(false);
