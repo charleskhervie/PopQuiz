@@ -7,14 +7,12 @@ public class GameFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 
-        // Create a panel just to get the proper size
         JPanel dummy = new JPanel();
         add(dummy);
         pack();
 
-        // Set the content area to exactly 1920x1080
-        setSize(new Dimension(1920, 1080 + getInsets().top)); // add title bar height
-        setLocationRelativeTo(null); // center on screen
+        setSize(new Dimension(1920, 1080 + getInsets().top)); 
+        setLocationRelativeTo(null); 
     }
 
     public void showScreen(Screen screen) {

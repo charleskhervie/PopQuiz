@@ -8,7 +8,6 @@ public class GameVictoryScreen implements Screen {
     private JPanel panel;
 
     public GameVictoryScreen(ActionListener onReturnToTitle) {
-        // Stop any previous audio and play victory music
         AudioPlayer.stopAll();
         AudioPlayer.playSound("./audio/GameVictory.wav", true);
         

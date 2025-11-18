@@ -8,14 +8,11 @@ public class PopQuiz {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            // Access the splash screen (shown by JVM)
             SplashScreen splash = SplashScreen.getSplashScreen();
 
-            // Load resources in the background
             new SwingWorker<GradeManager, Void>() {
                 @Override
                 protected GradeManager doInBackground() throws Exception {
-                    // Load your questions here
                     var theoretical = QuestionLoader.loadQuestions("questions.json", "theoretical");
                     var programming = QuestionLoader.loadQuestions("questions.json", "programming");
                     return new GradeManager(theoretical, programming);
@@ -30,12 +27,10 @@ public class PopQuiz {
                         System.exit(1);
                     }
 
-                    // Close splash manually
                     if (splash != null) {
                         splash.close();
                     }
 
-                    // Start your main game frame
                     GameFrame frame = new GameFrame();
 
                     final ActionListener[] onStart = new ActionListener[1];

@@ -31,7 +31,6 @@ public class QuestionLoader {
                     choices[i] = (String) choicesArr.get(i);
                 }
                 long ans = (long) q.get("answer");
-                // Correct order: type, question, choices, answer
                 questions.add(new Question(type, text, choices, (int) ans));
             }
         } catch (Exception e) {

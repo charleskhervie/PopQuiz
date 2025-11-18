@@ -137,7 +137,7 @@ public class GradeManager {
                     usedIndicesThisGrade.add(globalIndex);
                 }
             } else {
-                System.err.println("ERROR: Could not find question in allQuestions pool!");
+                System.err.println("could not find question in allQuestions pool!");
             }
         }
     }

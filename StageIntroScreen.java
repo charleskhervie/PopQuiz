@@ -8,7 +8,6 @@ public class StageIntroScreen implements Screen {
     private JPanel panel;
 
     public StageIntroScreen(int grade, ActionListener onStartGrade) {
-        // Stop any previous audio and play stage intro music
         AudioPlayer.stopAll();
         AudioPlayer.playSound("./audio/StageIntro.wav", true);
         

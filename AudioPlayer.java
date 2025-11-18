@@ -1,4 +1,3 @@
-// AudioPlayer.java
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
@@ -17,12 +16,11 @@ public class AudioPlayer {
             activeClips.add(clip);
             
             if (loop) {
-                clip.loop(Clip.LOOP_CONTINUOUSLY); // background music
+                clip.loop(Clip.LOOP_CONTINUOUSLY); 
             } else {
-                clip.start(); // one-time sound effect
+                clip.start(); 
             }
             
-            // Remove clip from list when it finishes (for non-looping sounds)
             clip.addLineListener(event -> {
                 if (event.getType() == LineEvent.Type.STOP && !loop) {
                     activeClips.remove(clip);
@@ -42,5 +40,13 @@ public class AudioPlayer {
             clip.close();
         }
         activeClips.clear();
+    }
+
+    public static void stopSound(Clip clip) {
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+            clip.close();
+            activeClips.remove(clip);
+        }
     }
 }

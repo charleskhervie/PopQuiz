@@ -10,7 +10,6 @@ public class TitleScreen implements Screen {
 
     public TitleScreen(ActionListener onStart, ActionListener onInstructions, ActionListener onExit) {
         
-        // Stop any previous audio and play title screen music
         AudioPlayer.stopAll();
         AudioPlayer.playSound("./audio/TitleScreen.wav", true);
         
